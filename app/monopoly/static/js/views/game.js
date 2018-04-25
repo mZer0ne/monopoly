@@ -325,7 +325,7 @@ class GameView {
 
     async handleAddErr() {
         await this.showModal(null, "Permission Denied", "Game Not Found", "Navigating back... Create your own game with your friends!", [], 5);
-        window.location = `http://${window.location.host}/monopoly/join`;
+        window.location = `../../../join`;
     }
 
 
@@ -508,7 +508,7 @@ class GameView {
         this.showModal(null, "Scoreboard", "Good Game!", scoreboardTemplate, [{
             text: "Start a New Game",
             callback: () => {
-                window.location = `http://${window.location.host}/monopoly/join`;
+                window.location = `../../../join`;
             }
         }]);
     }

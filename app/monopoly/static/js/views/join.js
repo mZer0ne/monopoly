@@ -106,11 +106,11 @@ class JoinView {
     }
 
     navigateToGame() {
-        window.location = `http://${window.location.host}/monopoly/game/${this.hostName}`;
+        window.location = `../../../game/${this.hostName}`;
     }
 
     navigateBack() {
-        window.location = `http://${window.location.host}/monopoly/join`;
+        window.location = `../../../join`;
     }
 
     copyToClipboard() {

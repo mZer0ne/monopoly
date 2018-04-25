@@ -1,12 +1,16 @@
 # Team16: CMU Monopoly
 
-## Play Online
-https://goo.gl/mFvHvU
+## Installation project:
+```bash
+git clone --depth 1 https://github.com/mZer0ne/monopoly.git monopoly
+cd ./monopoly/install/
+sudo bash install.sh
+```
 
-> **Test Users**
-> - User Name: je0k
-> - User Name: ztong
-> - Password for all users: 1
+## How to run
+```bash
+docker compose up
+```
 
 ## Highlights
 ### Game 
