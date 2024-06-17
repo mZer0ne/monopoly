@@ -69,7 +69,7 @@ class GameView {
     }
 
     initWebSocket() {
-        this.socket = new WebSocket(`ws://${window.location.host}/game/${this.hostName}`);
+        this.socket = new WebSocket(`/socket/game/${this.hostName}`);
 
         this.socket.onmessage = (event) => {
             const message = JSON.parse(event.data);
@@ -299,8 +299,7 @@ class GameView {
         for (let i = 0; i < houses.length; i++) {
             if (houses[i] === 4) {
                 this.gameController.addProperty(PropertyManager.PROPERTY_HOTEL, i);
-            }
-            else {
+            } else {
                 for (let building_num = 0; building_num < houses[i]; building_num++) {
                     this.gameController.addProperty(PropertyManager.PROPERTY_HOUSE, i);
                 }
@@ -325,7 +324,7 @@ class GameView {
 
     async handleAddErr() {
         await this.showModal(null, "Permission Denied", "Game Not Found", "Navigating back... Create your own game with your friends!", [], 5);
-        window.location = `../../../join`;
+        window.location = `${window.location.origin}/monopoly/join`;
     }
 
 
@@ -508,7 +507,7 @@ class GameView {
         this.showModal(null, "Scoreboard", "Good Game!", scoreboardTemplate, [{
             text: "Start a New Game",
             callback: () => {
-                window.location = `../../../join`;
+                window.location = `${window.location.origin}/monopoly/join`;
             }
         }]);
     }
@@ -539,11 +538,6 @@ class GameView {
             action: "end_game",
         }));
     }
-
-    // async handleGameEnd() {
-    //     await this.showModal(null, "Game Terminated by Host", "", "Navigating back...", [], 5);
-    //     window.location = `http://${window.location.host}/monopoly/join`;
-    // }
 }
 
 window.onload = () => {

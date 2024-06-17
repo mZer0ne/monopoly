@@ -31,12 +31,13 @@ def ws_add(message):
     message.reply_channel.send({"accept": True})
     mypath = message.content['path']
     print 'path is', mypath
-    if 'join' in mypath:
-        ws_connect_for_join(message)
-    # elif 'start' in mypath:
-    #     ws_connect_for_start(message)
-    elif 'game' in mypath:
-        ws_connect_for_game(message, rooms, games)
+    if 'socket' in  mypath:
+        if 'join' in mypath:
+            ws_connect_for_join(message)
+        # elif 'start' in mypath:
+        #     ws_connect_for_start(message)
+        elif 'game' in mypath:
+            ws_connect_for_game(message, rooms, games)
 
 
 @channel_session_user_from_http

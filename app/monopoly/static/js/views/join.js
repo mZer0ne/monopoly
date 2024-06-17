@@ -37,7 +37,7 @@ class JoinView {
 
         if (this.userName === this.hostName) {
             this.$invitationLink = document.getElementById("invitation-url");
-            this.$invitationLink.value = `${window.location.host}/monopoly/join/${this.hostName}`;
+            this.$invitationLink.value = `${window.location.origin}/monopoly/join/${this.hostName}`;
 
             this.$copyTooltip = document.getElementById("copied-tooltip");
             this.$copyButton = document.getElementById("share-invitation");
@@ -54,7 +54,7 @@ class JoinView {
     }
 
     initWebSocket() {
-        this.socket = new WebSocket(`ws://${window.location.host}/join/${this.hostName}`);
+        this.socket = new WebSocket(`/socket/join/${this.hostName}`);
 
         this.socket.onmessage = (event) => {
             const message = JSON.parse(event.data);
@@ -106,11 +106,11 @@ class JoinView {
     }
 
     navigateToGame() {
-        window.location = `../../../game/${this.hostName}`;
+        window.location = `${window.location.origin}/monopoly/game/${this.hostName}`;
     }
 
     navigateBack() {
-        window.location = `../../../join`;
+        window.location = `${window.location.origin}/monopoly/join`;
     }
 
     copyToClipboard() {
