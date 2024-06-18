@@ -21,8 +21,10 @@ class LoginView(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect("/join")
-
+                if 'next' in request.GET:
+                    return redirect(request.GET['next'])
+                else:
+                    return redirect("/join")
             else:
                 res = {'active_page': 'login',
                        "error": "Inactive user."}
