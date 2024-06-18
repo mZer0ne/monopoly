@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login, authenticate
 
+
 class LoginView(View):
     initial = {'active_page': 'register'}
     template_name = 'login_view.html'
@@ -30,4 +31,3 @@ class LoginView(View):
             res = {'active_page': 'login',
                    "error": "Invalid username or password."}
             return render(request, self.template_name, res)
-

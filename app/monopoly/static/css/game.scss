@@ -28,9 +28,10 @@
   display: flex;
   box-shadow: 0 0 20px #fff;
   z-index: 100;
-}
-.user-group.active {
-  box-shadow: 0 0 0 4px #BF360C;
+
+  &.active {
+    box-shadow: 0 0 0 4px #BF360C;
+  }
 }
 
 .user-cash {
@@ -50,16 +51,17 @@
   vertical-align: middle;
   position: relative;
   padding: 5px;
-}
-.user-avatar:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  height: 38px;
-  width: 38px;
-  background-size: 38px 38px;
-  border-radius: 24px;
-  background-image: url("/static/images/default_avatar.png");
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    background-size: 38px 38px;
+    border-radius: 24px;
+    background-image: url("/static/images/default_avatar.png");
+  }
 }
 
 .user-role {
@@ -124,18 +126,20 @@
   height: 128px;
   vertical-align: middle;
   position: absolute;
-}
-#modal-user-avatar:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  height: 128px;
-  width: 128px;
-  background-size: 128px 128px;
-  background-image: url("/static/images/default_avatar.png");
-}
-#modal-user-avatar.active {
-  box-shadow: 0 0 40px #5db0fd;
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 128px;
+    width: 128px;
+    background-size: 128px 128px;
+    background-image: url("/static/images/default_avatar.png");
+  }
+
+  &.active {
+    box-shadow: 0 0 40px #5db0fd;
+  }
 }
 
 #modal-buttons-container {
@@ -143,9 +147,10 @@
   flex-flow: row;
   justify-content: center;
   margin-top: 20px;
-}
-#modal-buttons-container button {
-  margin: 0 10px;
+
+  button {
+    margin: 0 10px;
+  }
 }
 
 .monopoly-cash {
@@ -154,6 +159,7 @@
 }
 
 /* Chat */
+
 #chat-container {
   position: absolute;
   top: 0;
@@ -182,15 +188,16 @@
   border-radius: 36px;
   position: relative;
   overflow: hidden;
-}
-.chat-message-avatar:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  height: 36px;
-  width: 36px;
-  background-size: 36px 36px;
-  background-image: url("/static/images/default_avatar.png");
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    background-size: 36px 36px;
+    background-image: url("/static/images/default_avatar.png");
+  }
 }
 
 .chat-message-content {
@@ -228,10 +235,11 @@
   flex-direction: column;
   flex-grow: 1;
   overflow: hidden;
-}
-#chat-messages .chat-message {
-  background: #eeeeee;
-  animation: fade-and-move 10s forwards;
+
+  .chat-message {
+    background: #eeeeee;
+    animation: fade-and-move 10s forwards;
+  }
 }
 
 #chat-send-container.chat-message {
@@ -243,14 +251,17 @@
     opacity: 0;
     transform: translateY(5rem);
   }
+
   10% {
     opacity: 0.8;
     transform: translateY(0);
   }
+
   85% {
     opacity: 0.8;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-5rem);
@@ -258,6 +269,7 @@
     overflow: hidden;
   }
 }
+
 #modal-title {
   align-items: center;
   text-align: center;
@@ -296,21 +308,26 @@
   font-family: monospace;
 }
 
-.scoreboard-row:nth-child(1) {
-  color: #F44336;
-  animation: fadein 1s;
-}
-.scoreboard-row:nth-child(2) {
-  color: #FF9800;
-  animation: fadein 2s;
-}
-.scoreboard-row:nth-child(3) {
-  color: #2196F3;
-  animation: fadein 3s;
-}
-.scoreboard-row:nth-child(4) {
-  color: #009688;
-  animation: fadein 4s;
+.scoreboard-row {
+  &:nth-child(1) {
+    color: #F44336;
+    animation: fadein 1s;
+  }
+
+  &:nth-child(2) {
+    color: #FF9800;
+    animation: fadein 2s;
+  }
+
+  &:nth-child(3) {
+    color: #2196F3;
+    animation: fadein 3s;
+  }
+
+  &:nth-child(4) {
+    color: #009688;
+    animation: fadein 4s;
+  }
 }
 
 .scoreboard-bg {
@@ -321,10 +338,12 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 #controls-container {
   top: 0;
   position: absolute;
@@ -333,22 +352,25 @@
   margin: 40px;
   left: 0;
   z-index: 100;
-}
-#controls-container svg {
-  border-radius: 29px;
-  background: #eeeeee;
-  width: 30px;
-  height: 30px;
-  padding: 9px;
-  opacity: 0.8;
-  margin-right: 20px;
-}
-#controls-container a {
-  cursor: pointer;
-}
-#controls-container a.control-off svg {
-  background: #424242;
-  fill: #9E9E9E;
+
+  svg {
+    border-radius: 29px;
+    background: #eeeeee;
+    width: 30px;
+    height: 30px;
+    padding: 9px;
+    opacity: 0.8;
+    margin-right: 20px;
+  }
+
+  a {
+    &.control-off svg {
+      background: #424242;
+      fill: #9E9E9E;
+    }
+
+    cursor: pointer;
+  }
 }
 
 #rules-overlay {
@@ -425,29 +447,33 @@
 
 .rule-container {
   font-size: 16px;
-  background: rgba(78, 78, 78, 0.2784313725);
+  background: #4e4e4e47;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   padding: 20px;
   margin: 0 20px;
-}
-.rule-container ul {
-  line-height: 0;
-  padding-left: 20px;
-  margin: 5px 0;
-}
-.rule-container ul li {
-  line-height: 24px;
-}
-.rule-container ul li img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin: 0 4px;
-}
-.rule-container ul li span {
-  vertical-align: middle;
+
+  ul {
+    li {
+      line-height: 24px;
+
+      img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin: 0 4px;
+      }
+
+      span {
+        vertical-align: middle;
+      }
+    }
+
+    line-height: 0;
+    padding-left: 20px;
+    margin: 5px 0;
+  }
 }
 
 .rule-title {
@@ -459,5 +485,3 @@
 #construction-rule-container {
   min-width: 300px;
 }
-
-/*# sourceMappingURL=game.css.map */

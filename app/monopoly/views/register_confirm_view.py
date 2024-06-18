@@ -9,6 +9,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.views import View
 from django.shortcuts import render
 
+
 # @transaction.atomic
 class ConfirmRegistrationView(View):
     initial = {'key': 'value'}
