@@ -20,7 +20,7 @@ class LoginView(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect("/monopoly/join")
+                return redirect("/join")
 
             else:
                 res = {'active_page': 'login',

@@ -27,4 +27,4 @@ class ConfirmRegistrationView(View):
         user.save()
         login(request, user)
 
-        return redirect("/monopoly/join")
+        return redirect("/join")
