@@ -1,3 +1,4 @@
+from django.utils.translation import gettext as _
 from move_result_enum import *
 
 
@@ -38,7 +39,7 @@ class MoveResult(object):
 
     def is_option(self):
         return self.move_result_type == MoveResultType.BUY_LAND_OPTION or \
-               self.move_result_type == MoveResultType.CONSTRUCTION_OPTION
+            self.move_result_type == MoveResultType.CONSTRUCTION_OPTION
 
     def __str__(self):
         saying = self.msg if self.msg else ""
@@ -53,15 +54,15 @@ class MoveResult(object):
         saying = self.msg if self.msg else ""
         saying += " " + MoveResultType.get_description(self.move_result_type)
         if self.move_result_type == MoveResultType.BUY_LAND_OPTION:
-            saying += "The price is " + str(self.value)
+            saying += _("The price is ") + str(self.value)
         elif self.move_result_type == MoveResultType.PAYMENT:
-            saying += "The payment amount is " + str(self.value)
+            saying += _("The payment amount is ") + str(self.value)
         elif self.move_result_type == MoveResultType.REWARD:
-            saying += "The award amount is " + str(self.value)
+            saying += _("The award amount is ") + str(self.value)
         elif self.move_result_type == MoveResultType.STOP_ROUND:
             pass
         elif self.move_result_type == MoveResultType.CONSTRUCTION_OPTION:
-            saying += "The cost for the building is " + str(self.value)
+            saying += _("The cost for the building is ") + str(self.value)
         else:
             pass
 

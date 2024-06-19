@@ -1,6 +1,6 @@
-from django.conf.urls import url
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
+from django.conf.urls import url
 
 from monopoly.views.game_view import GameView
 from monopoly.views.join_view import JoinView

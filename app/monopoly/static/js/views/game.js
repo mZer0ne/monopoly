@@ -48,7 +48,7 @@ class GameView {
         this.$modalTitle = document.getElementById("modal-title");
         this.$modalSubTitle = document.getElementById("modal-subtitle");
 
-        this.showModal(null, "Welcome to Monopoly", "", "Loading game resources...", []);
+        this.showModal(null, translate("Welcome to Monopoly"), "", translate("Loading game resources..."), []);
         this.initBoard();
     }
 
@@ -176,16 +176,16 @@ class GameView {
         $nextUserGroup.classList.add("active");
 
         this.currentPlayer = nextPlayer;
-        let title = (this.currentPlayer === this.myPlayerIndex) ? "Your Turn!" : "";
+        let title = (this.currentPlayer === this.myPlayerIndex) ? translate("Your Turn!") : "";
 
         // role dice
         const button = (nextPlayer !== this.myPlayerIndex) ? [] :
             [{
-                text: "Roll",
+                text: translate("Roll"),
                 callback: () => {
                     document.getElementById("roll").checked = true;
                     document.querySelector("#modal-buttons-container button").disabled = true;
-                    document.querySelector("#modal-buttons-container button").innerText = "Hold on...";
+                    document.querySelector("#modal-buttons-container button").innerText = translate("Hold on...");
 
                     this.audioManager.play("dice");
 
@@ -310,10 +310,10 @@ class GameView {
             this.changePlayer(nextPlayer, this.onDiceRolled.bind(this));
         } else {
             const buttons = (this.myPlayerIndex === nextPlayer) ? [{
-                text: "Buy",
+                text: translate("Purchase"),
                 callback: this.confirmDecision.bind(this)
             }, {
-                text: "No",
+                text: translate("Cancel"),
                 callback: this.cancelDecision.bind(this)
             }] : [];
             eventMsg = this.players[nextPlayer].userName + " " + eventMsg;
@@ -323,7 +323,7 @@ class GameView {
 
 
     async handleAddErr() {
-        await this.showModal(null, "Permission Denied", "Game Not Found", "Navigating back... Create your own game with your friends!", [], 5);
+        await this.showModal(null, translate("Permission Denied"), translate("Game Not Found"), translate("Navigating back... Create your own game!"), [], 5);
         window.location = `/join`;
     }
 
@@ -336,29 +336,29 @@ class GameView {
         let eventMsg = message.result;
         let title = message.title;
         let landname = message.landname;
-        let rollResMsg = this.players[currPlayer].userName + " gets a roll result " + steps.toString();
+        let rollResMsg = this.players[currPlayer].userName + translate(" gets a roll result ") + steps.toString();
 
-        await this.showModal(currPlayer, this.players[currPlayer].userName + " got " + steps.toString(), "", "", [], 2);
+        await this.showModal(currPlayer, this.players[currPlayer].userName + translate(" got ") + steps.toString(), "", "", [], 2);
 
         await this.gameController.movePlayer(currPlayer, newPos);
 
         this.audioManager.play("move");
 
         if (message.bypass_start === "true") {
-            let eventMsg = this.players[currPlayer].userName + " has passed the start point, reward 200.";
+            let eventMsg = this.players[currPlayer].userName + translate(" has passed the start point, reward 200.");
             if (message.is_cash_change !== "true") {
                 let cash = message.curr_cash;
                 this.changeCashAmount(cash);
             }
-            await this.showModal(currPlayer, "Get Reward", "Start point", eventMsg, [], 2);
+            await this.showModal(currPlayer, translate("Get Reward"), translate("Start point"), eventMsg, [], 2);
         }
 
         if (message.is_option === "true") {
             const buttons = (this.myPlayerIndex === currPlayer) ? [{
-                text: "Buy",
+                text: translate("Purchase"),
                 callback: this.confirmDecision.bind(this)
             }, {
-                text: "No",
+                text: translate("Cancel"),
                 callback: this.cancelDecision.bind(this)
             }] : [];
 
@@ -504,8 +504,8 @@ class GameView {
         }
         scoreboardTemplate += "</div>";
         this.$modalCardContent.classList.add("scoreboard-bg");
-        this.showModal(null, "Scoreboard", "Good Game!", scoreboardTemplate, [{
-            text: "Start a New Game",
+        this.showModal(null, translate("Scoreboard"), translate("Good Game!"), scoreboardTemplate, [{
+            text: translate("Start a New Game"),
             callback: () => {
                 window.location = `/join`;
             }

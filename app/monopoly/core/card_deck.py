@@ -1,5 +1,6 @@
-from card import Card
+from django.utils.translation import gettext as _
 from random import shuffle
+from card import Card
 
 
 class CardDeck(object):
@@ -8,12 +9,12 @@ class CardDeck(object):
     def __init__(self):
         self._index = 0
         self._cards = []
-        self._cards.append(Card("Get One More Grace day ", 100, 0))
-        self._cards.append(Card("Overspeed ", 200, 0))
-        self._cards.append(Card("Autolab rank reward ", -100, 0))
-        self._cards.append(Card("Illegal Parking ", 150, 0))
-        self._cards.append(Card("Meet harry potter in Doherty Hall", -150, 0))
-        self._cards.append(Card("Host a fantastic Carnival", -200, 0))
+        self._cards.append(Card(_("Get One More Grace day "), 100, 0))
+        self._cards.append(Card(_("Overspeed "), 200, 0))
+        self._cards.append(Card(_("Autolab rank reward "), -100, 0))
+        self._cards.append(Card(_("Illegal Parking "), 150, 0))
+        self._cards.append(Card(_("Meet harry potter in Doherty Hall"), -150, 0))
+        self._cards.append(Card(_("Host a fantastic Carnival"), -200, 0))
         self.shuffle()
 
     def insert(self, card):

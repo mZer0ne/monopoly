@@ -16,7 +16,6 @@ class Player(object):
         self._remaining_stop = 0
         self._properties = set()
 
-
     def get_position(self):
         return self._position
 
@@ -73,8 +72,6 @@ class Player(object):
 
     def __str__(self):
         return "Player index: {0}".format(self._index)
-
-
 
 
 def test():

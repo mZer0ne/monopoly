@@ -3,3 +3,7 @@ Host: smtp.andrew.cmu.edu
 Port: 465
 User: Andrew ID
 Password: Your Password
+
+[OAuth]
+GOOGLE_KEY: 738731448631-fhkcee115uhman4os2bphsmtcb8s6dme.apps.googleusercontent.com
+GOOGLE_SECRET: hmTdhhlKwTK27dNgq3UXWOOy

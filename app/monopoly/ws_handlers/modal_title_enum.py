@@ -1,10 +1,15 @@
+from django.utils.translation import gettext as _
+
+
 class ModalTitleType():
     @staticmethod
     def get_description(val):
-        ret = ["Purchase Land",
-               "Make a Payment",
-               "Get Reward",
-               "Stop One Round",
-               "Build a House",
-               "Nothing actually happened"]
+        ret = [
+            _("Purchase Land"),
+            _("Make a Payment"),
+            _("Get Reward"),
+            _("Stop One Round"),
+            _("Build a House"),
+            _("Nothing actually happened")
+        ]
         return ret[val]

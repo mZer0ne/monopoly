@@ -1,0 +1,560 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-19 10:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: monopoly/core/board.py:18
+#, fuzzy
+#| msgid "New Start"
+msgid "Start"
+msgstr "Вперед"
+
+#: monopoly/core/board.py:19
+msgid "Warner Hall"
+msgstr "ул. Житня"
+
+#: monopoly/core/board.py:20
+#: monopoly/core/board.py:25
+#: monopoly/core/board.py:35
+#: monopoly/core/board.py:40
+#: monopoly/core/board.py:51
+#: monopoly/core/board.py:54
+msgid "Chance"
+msgstr "Общественная Казна"
+
+#: monopoly/core/board.py:21
+msgid "UC"
+msgstr "ул. Нагатинская"
+
+#: monopoly/core/board.py:22
+msgid "Union Grill"
+msgstr "Подоходный налог"
+
+#: monopoly/core/board.py:23
+msgid "AB route"
+msgstr "Рижская Железная Дорога"
+
+#: monopoly/core/board.py:24
+msgid "College of Fine Art"
+msgstr "Варшавское Шоссе"
+
+#: monopoly/core/board.py:26
+msgid "Posner Hall"
+msgstr "ул. Огарева"
+
+#: monopoly/core/board.py:27
+msgid "Hunt Library"
+msgstr "ул. Первая Парковая"
+
+#: monopoly/core/board.py:28
+#: monopoly/core/board.py:48
+#: monopoly/core/land.py:228
+msgid "AIV Jail"
+msgstr "Тюрьма"
+
+#: monopoly/core/board.py:29
+msgid "Doherty Hall"
+msgstr "ул. Полянка"
+
+#: monopoly/core/board.py:30
+msgid "Entropy+"
+msgstr "Электростанция"
+
+#: monopoly/core/board.py:31
+msgid "Gasling Stadium"
+msgstr "ул. Стретенка"
+
+#: monopoly/core/board.py:32
+msgid "Margaret Morrison Carnegie Hall"
+msgstr "Ростовская наб."
+
+#: monopoly/core/board.py:33
+msgid "Escort"
+msgstr "Курская Железная Дорога"
+
+#: monopoly/core/board.py:34
+msgid "Hamerschlag Hall"
+msgstr "Рязанский Проспект"
+
+#: monopoly/core/board.py:36
+msgid "Roberts Engineering Hall"
+msgstr "ул. Вавилова"
+
+#: monopoly/core/board.py:37
+msgid "Porter Hall"
+msgstr "Рублевское Шоссе"
+
+#: monopoly/core/board.py:38
+msgid "Parking"
+msgstr "Бесплатная Стоянка"
+
+#: monopoly/core/board.py:39
+msgid "Gates Center"
+msgstr "ул. Тверская"
+
+#: monopoly/core/board.py:41
+msgid "Newell-Simon Hall"
+msgstr "ул. Пушкинская"
+
+#: monopoly/core/board.py:42
+msgid "Wean Hall"
+msgstr "пл. Маяковского"
+
+#: monopoly/core/board.py:43
+msgid "PTC"
+msgstr "Казанская Железная Дорога"
+
+#: monopoly/core/board.py:44
+msgid "Baker Hall"
+msgstr "ул. Грузинский Вал"
+
+#: monopoly/core/board.py:45
+msgid "Fence"
+msgstr "Новиниский Бульвар"
+
+#: monopoly/core/board.py:46
+msgid "iNoodle"
+msgstr "Водопровод"
+
+#: monopoly/core/board.py:47
+msgid "Purnell Center"
+msgstr "Смоленская Площадь"
+
+#: monopoly/core/board.py:49
+msgid "Hamburg Hall"
+msgstr "ул. Шусева"
+
+#: monopoly/core/board.py:50
+msgid "Collaborative Innovation Center"
+msgstr "Гоголевский Бульвар"
+
+#: monopoly/core/board.py:52
+msgid "Cyert Hall"
+msgstr "Кутузовский Проспект"
+
+#: monopoly/core/board.py:53
+msgid "Monorail"
+msgstr "Ленинградская Железная Дорога"
+
+#: monopoly/core/board.py:55
+msgid "Information Networking Institute"
+msgstr "ул. Малая Бронная"
+
+#: monopoly/core/board.py:56
+msgid "Pasta Vilaggio"
+msgstr "Сверхналог"
+
+#: monopoly/core/board.py:57
+msgid "Mellon Institute"
+msgstr "ул. Арбат"
+
+#: monopoly/core/card_deck.py:12
+msgid "Get One More Grace day "
+msgstr "Получите еще один день отсрочки "
+
+#: monopoly/core/card_deck.py:13
+msgid "Overspeed "
+msgstr "Превышение скорости "
+
+#: monopoly/core/card_deck.py:14
+msgid "Autolab rank reward "
+msgstr "Награда за звание Автолаборатории "
+
+#: monopoly/core/card_deck.py:15
+msgid "Illegal Parking "
+msgstr "Неправильная парковка "
+
+#: monopoly/core/card_deck.py:16
+msgid "Meet harry potter in Doherty Hall"
+msgstr "Встретьтесь с Гарри Поттером в Доэрти-холле"
+
+#: monopoly/core/card_deck.py:17
+msgid "Host a fantastic Carnival"
+msgstr "Устройте фантастический карнавал"
+
+#: monopoly/core/land.py:224
+#, fuzzy
+#| msgid "Construction"
+msgid "Construction Land"
+msgstr "Строительство"
+
+#: monopoly/core/land.py:225
+msgid "Infrastructure"
+msgstr "Инфраструктура"
+
+#: monopoly/core/land.py:226
+msgid "New Start"
+msgstr "Новое Начало"
+
+#: monopoly/core/land.py:227
+msgid "Parking "
+msgstr "Стоянка "
+
+#: monopoly/core/land.py:229
+msgid "Chance Card"
+msgstr "Карточка шанс"
+
+#: monopoly/core/move_result.py:57
+msgid "The price is "
+msgstr "Цена "
+
+#: monopoly/core/move_result.py:59
+msgid "The payment amount is "
+msgstr "Сумма платежа составляет "
+
+#: monopoly/core/move_result.py:61
+msgid "The award amount is "
+msgstr "Сумма премии составляет "
+
+#: monopoly/core/move_result.py:65
+msgid "The cost for the building is "
+msgstr "Стоимость здания составляет "
+
+#: monopoly/core/move_result_enum.py:15
+msgid "is choosing to buy or not. "
+msgstr "решает покупать или нет. "
+
+#: monopoly/core/move_result_enum.py:16
+msgid "should make a payment. "
+msgstr "должен произвести оплату. "
+
+#: monopoly/core/move_result_enum.py:17
+msgid "is rewarded a fortune. "
+msgstr "получил целое состояние. "
+
+#: monopoly/core/move_result_enum.py:18
+msgid "is stopped for one round. "
+msgstr "останавливается на один раунд. "
+
+#: monopoly/core/move_result_enum.py:19
+msgid "is choosing to build a new building or not. "
+msgstr "решает строить новое здание или нет. "
+
+#: monopoly/core/move_result_enum.py:20
+msgid "Nothing actually happened. "
+msgstr "На самом деле ничего не произошло. "
+
+#: monopoly/templates/base.html:17
+msgid "Navigating back... Create your own game!"
+msgstr "Возвращаемся назад... Создайте свою собственную игру!"
+
+#: monopoly/templates/base.html:18
+msgid "Waiting for host to start the game..."
+msgstr "Ждем, пока хост запустит игру..."
+
+#: monopoly/templates/base.html:19
+msgid "Loading game resources..."
+msgstr "Загрузка игровых ресурсов..."
+
+#: monopoly/templates/base.html:20
+msgid "4 Players Max Per Game!"
+msgstr "Максимум 4 игрока в игре!"
+
+#: monopoly/templates/base.html:21
+msgid " gets a roll result "
+msgstr " выкинул "
+
+#: monopoly/templates/base.html:22
+msgid "Welcome to Monopoly"
+msgstr "Добро пожаловать в Монополию"
+
+#: monopoly/templates/base.html:23
+msgid "Permission Denied"
+msgstr "Доступ запрещен"
+
+#: monopoly/templates/base.html:24
+msgid "Start a New Game"
+msgstr "Начать новую игру"
+
+#: monopoly/templates/base.html:25
+msgid "Game Not Found"
+msgstr "Игра не найдена"
+
+#: monopoly/templates/base.html:26
+msgid "Start Game"
+msgstr "Начать игру"
+
+#: monopoly/templates/base.html:27
+msgid "Hold on..."
+msgstr "Подожди..."
+
+#: monopoly/templates/base.html:28
+msgid "Your Turn!"
+msgstr "Твой Ход!"
+
+#: monopoly/templates/base.html:29 monopoly/ws_handlers/modal_title_enum.py:10
+msgid "Get Reward"
+msgstr "Получить вознаграждение"
+
+#: monopoly/templates/base.html:30
+msgid "Purchase"
+msgstr "Купить"
+
+#: monopoly/templates/base.html:31
+msgid "Cancel"
+msgstr "Отмена"
+
+#: monopoly/templates/base.html:32
+msgid " got "
+msgstr " выкинул "
+
+#: monopoly/templates/base.html:33
+msgid "Roll"
+msgstr "Бросить"
+
+#: monopoly/templates/game_view.html:57
+msgid "Message"
+msgstr "Сообщение"
+
+#: monopoly/templates/game_view.html:58
+msgid "Press Enter to send message..."
+msgstr "Нажмите Enter, чтобы отправить сообщение..."
+
+#: monopoly/templates/game_view.html:81
+msgid "Mute/Unmute Music"
+msgstr "Отключить/Включить звук"
+
+#: monopoly/templates/game_view.html:84
+msgid "Hide/Show the tutorial again"
+msgstr "Скрыть/Показать подсказку"
+
+#: monopoly/templates/game_view.html:88
+msgid "Terminate the game"
+msgstr "Завершить игру"
+
+#: monopoly/templates/game_view.html:93
+msgid "The balance of each player"
+msgstr "Баланс каждого игрока"
+
+#: monopoly/templates/game_view.html:94
+msgid "You have 1500 million when the game starts."
+msgstr "На момент начала игры у вас есть 1500 миллионов."
+
+#: monopoly/templates/game_view.html:97
+msgid "Chat with your friends"
+msgstr "Чат с друзьями"
+
+#: monopoly/templates/game_view.html:98
+msgid "Messages will show up here."
+msgstr "Здесь будут появляться сообщения."
+
+#: monopoly/templates/game_view.html:102
+msgid "You start here."
+msgstr "Вы начинаете здесь."
+
+#: monopoly/templates/game_view.html:107
+msgid "Construction"
+msgstr "Строительство"
+
+#: monopoly/templates/game_view.html:108
+msgid "When you stop onto a new land, you can"
+msgstr "Когда вы остановитесь на новой клетке, вы сможете"
+
+#: monopoly/templates/game_view.html:111
+msgid "do nothing"
+msgstr "ничего не делать"
+
+#: monopoly/templates/game_view.html:114
+msgid "buy the land"
+msgstr "купить клетку"
+
+#: monopoly/templates/game_view.html:117
+msgid "(up to three, one at a time)"
+msgstr "(до трех, по одному)"
+
+#: monopoly/templates/game_view.html:117
+msgid "build a house for $100"
+msgstr "построить один дом за 100$"
+
+#: monopoly/templates/game_view.html:121
+msgid "upgrade to a hotel for $150"
+msgstr "построить отель за 150$"
+
+#: monopoly/templates/game_view.html:125
+msgid "You can also buy infrastructures like Entropy+, City Grill..."
+msgstr "Вы также можете купить другие инфраструктуры"
+
+#: monopoly/templates/game_view.html:128
+msgid "Rent"
+msgstr "Аренда"
+
+#: monopoly/templates/game_view.html:129
+msgid ""
+"When other players stop onto your land, you'll get rent from the player:"
+msgstr ""
+"Когда другие игроки останавливаются на вашей клетке, вы получаете от игрока "
+"ренту:"
+
+#: monopoly/templates/game_view.html:131
+msgid "¼ (house) or ½ (hotel) of the land price,"
+msgstr "¼ (дом) или ½ (гостиница) стоимости земли,"
+
+#: monopoly/templates/game_view.html:132
+msgid "and $10 for each house,"
+msgstr "и 10$ за каждый дом,"
+
+#: monopoly/templates/game_view.html:133
+msgid "and $50 for the hotel."
+msgstr "и 50$ за отель."
+
+#: monopoly/templates/game_view.html:137
+msgid "Game Process"
+msgstr "Игровой процесс"
+
+#: monopoly/templates/game_view.html:139
+msgid "You'll be suspended for one round if you reach the AIV jail."
+msgstr "Если вы доберетесь до тюрьмы, вас отстранят на один раунд."
+
+#: monopoly/templates/game_view.html:140
+msgid "The game ends after the first player runs out of cash."
+msgstr "Игра заканчивается после того, как у первого игрока закончатся деньги."
+
+#: monopoly/templates/join_view.html:23
+msgid "New Game!"
+msgstr "Новая игра"
+
+#: monopoly/templates/join_view.html:30
+msgid "Waiting for friends to join..."
+msgstr "Ждем друзей..."
+
+#: monopoly/templates/join_view.html:34
+msgid "Let your friends recognize you with a profile photo!"
+msgstr "Пусть ваши друзья узнают вас по аватару!"
+
+#: monopoly/templates/join_view.html:40
+msgid "Invite your friends to join the game by sharing the link."
+msgstr "Пригласите своих друзей присоединиться к игре, поделившись ссылкой."
+
+#: monopoly/templates/join_view.html:43
+msgid "Generating shared link..."
+msgstr "Создание общей ссылки..."
+
+#: monopoly/templates/join_view.html:46
+msgid "Copied!"
+msgstr "Скопировано!"
+
+#: monopoly/templates/join_view.html:47
+msgid "Copy"
+msgstr "Копировать"
+
+#: monopoly/templates/login_view.html:25
+msgid "First Name"
+msgstr "Имя"
+
+#: monopoly/templates/login_view.html:26
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: monopoly/templates/login_view.html:28
+msgid "Email"
+msgstr "Email"
+
+#: monopoly/templates/login_view.html:30
+msgid "User Name"
+msgstr "Логин"
+
+#: monopoly/templates/login_view.html:31
+msgid "Password"
+msgstr "Пароль"
+
+#: monopoly/templates/login_view.html:38
+msgid "Already Signed Up?"
+msgstr "Уже зарегистрированы?"
+
+#: monopoly/templates/login_view.html:40
+msgid "Log Into Existing Account"
+msgstr "Авторизация"
+
+#: monopoly/templates/login_view.html:43
+msgid "New Here?"
+msgstr "Впервые здесь?"
+
+#: monopoly/templates/login_view.html:45
+msgid "Create New Account"
+msgstr "Зарегистрироваться"
+
+#: monopoly/templates/profile_view.html:24
+msgid "Upload"
+msgstr "Загрузить"
+
+#: monopoly/templates/profile_view.html:37
+msgid "Back to Game"
+msgstr "Вернуться к игре"
+
+#: monopoly/templates/profile_view.html:42
+msgid "Edit Profile"
+msgstr "Редактировать профиль"
+
+#: monopoly/templates/profile_view.html:45
+msgid "Apply Changes"
+msgstr "Применить изменения"
+
+#: monopoly/templates/profile_view.html:50
+msgid "Logout"
+msgstr "Выход"
+
+#: monopoly/views/login_view.py:10 monopoly/views/register_view.py:14
+#: monopoly/views/register_view.py:35 monopoly/views/register_view.py:42
+msgid "Register"
+msgstr "Регистрация"
+
+#: monopoly/views/login_view.py:17 monopoly/views/login_view.py:37
+#: monopoly/views/login_view.py:44
+msgid "Login"
+msgstr "Авторизация"
+
+#: monopoly/views/login_view.py:35
+msgid "Inactive user."
+msgstr "Неактивный пользователь."
+
+#: monopoly/views/login_view.py:42
+msgid "Invalid username or password."
+msgstr "Неверный логин или пароль."
+
+#: monopoly/views/register_view.py:36
+msgid "Confirmation sent to your email."
+msgstr "Подтверждение отправлено на вашу электронную почту"
+
+#: monopoly/ws_handlers/modal_title_enum.py:8
+msgid "Purchase Land"
+msgstr "Купить Клетку"
+
+#: monopoly/ws_handlers/modal_title_enum.py:9
+msgid "Make a Payment"
+msgstr "должен произвести оплату. "
+
+#: monopoly/ws_handlers/modal_title_enum.py:11
+msgid "Stop One Round"
+msgstr "Остановить один раунд"
+
+#: monopoly/ws_handlers/modal_title_enum.py:12
+msgid "Build a House"
+msgstr "построить один дом за 100$"
+
+#: monopoly/ws_handlers/modal_title_enum.py:13
+#, fuzzy
+#| msgid "Nothing actually happened. "
+msgid "Nothing actually happened"
+msgstr "На самом деле ничего не произошло. "
+
+#, fuzzy
+#~| msgid "Navigating back... Create your own game!"
+#~ msgid "Navigating back... Create your own game with your friends!"
+#~ msgstr "Возвращаемся назад... Создайте свою собственную игру!"

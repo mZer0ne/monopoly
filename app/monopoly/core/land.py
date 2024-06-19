@@ -1,3 +1,4 @@
+from django.utils.translation import gettext as _
 from building import *
 
 
@@ -219,10 +220,12 @@ class LandType(object):
 
     @staticmethod
     def get_description(val):
-        ret = ["Construction Land",
-               "Infrastructure",
-               "New Start",
-               "Parking ",
-               "AIV Jail",
-               "Chance Card"]
+        ret = [
+            _("Construction Land"),
+            _("Infrastructure"),
+            _("New Start"),
+            _("Parking "),
+            _("AIV Jail"),
+            _("Chance Card")
+        ]
         return ret[val]

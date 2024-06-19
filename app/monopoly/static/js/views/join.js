@@ -68,18 +68,18 @@ class JoinView {
 
             if (this.friends.length > 1) {
                 if (this.hostName !== this.userName) {
-                    this.$startGame.innerText = "Waiting for host to start the game...";
+                    this.$startGame.innerText = translate("Waiting for host to start the game...");
                 } else {
                     this.$startGame.disabled = false;
-                    this.$startGame.innerText = "Start Game";
+                    this.$startGame.innerText = translate("Start Game");
                 }
             }
         } else if (message.action === "start") {
             this.navigateToGame();
         } else if (message.action === "fail_join") {
             this.$startGame.disabled = true;
-            this.$startGame.innerText = "Navigating back... Create your own game!";
-            this.$newGameNotice.innerText = "4 Players Max Per Game!";
+            this.$startGame.innerText = translate("Navigating back... Create your own game!");
+            this.$newGameNotice.innerText = translate("4 Players Max Per Game!");
             this.$newGameNotice.style.color = "#F44336";
             setTimeout(this.navigateBack, 2000);
         }

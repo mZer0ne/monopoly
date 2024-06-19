@@ -1,8 +1,21 @@
+# List of available services
 services:
+
+  # Define web application
   web:
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    build: .
-    volumes:
-      - ./app:/app
+
+    # Build the Dockerfile that is in the web directory
+    build:
+      dockerfile: Dockerfile
+      context: .
+
+    # Build name container
+    image: monopoly
+
+    # Expose port
     ports:
       - "8000:8000"
+
+    # Mount volumes with the project
+    volumes:
+      - ./app:/app

@@ -1,15 +1,20 @@
+from django.contrib.auth import login, authenticate
+from django.utils.translation import gettext as _
 from django.shortcuts import render, redirect
 from django.views import View
-from django.contrib.auth import login, authenticate
 
 
 class LoginView(View):
-    initial = {'active_page': 'register'}
+    initial = {
+        'active_page': 'register',
+        'action': _('Register')
+    }
     template_name = 'login_view.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {
-            "active_page": "login",
+            'active_page': 'login',
+            'action': _('Login'),
             "error": None
         })
 
@@ -26,10 +31,16 @@ class LoginView(View):
                 else:
                     return redirect("/join")
             else:
-                res = {'active_page': 'login',
-                       "error": "Inactive user."}
+                res = {
+                    'error': _('Inactive user.'),
+                    'active_page': 'login',
+                    'action': _('Login'),
+                }
                 return render(request, self.template_name, res)
         else:
-            res = {'active_page': 'login',
-                   "error": "Invalid username or password."}
+            res = {
+                'error': _('Invalid username or password.'),
+                'active_page': 'login',
+                'action': _('Login'),
+            }
             return render(request, self.template_name, res)

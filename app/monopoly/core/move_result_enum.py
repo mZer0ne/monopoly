@@ -1,3 +1,6 @@
+from django.utils.translation import gettext as _
+
+
 class MoveResultType(object):
     BUY_LAND_OPTION = 0
     PAYMENT = 1
@@ -8,10 +11,12 @@ class MoveResultType(object):
 
     @staticmethod
     def get_description(val):
-        ret = ["is choosing to buy or not. ",
-               "should make a payment. ",
-               "is rewarded a fortune. ",
-               "is stopped for one round. ",
-               "is choosing to build a new building or not. ",
-               "Nothing actually happened. "]
+        ret = [
+            _("is choosing to buy or not. "),
+            _("should make a payment. "),
+            _("is rewarded a fortune. "),
+            _("is stopped for one round. "),
+            _("is choosing to build a new building or not. "),
+            _("Nothing actually happened. ")
+        ]
         return ret[val]

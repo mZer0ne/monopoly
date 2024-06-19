@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %} Monopoly {% endblock %}
 
@@ -15,28 +16,34 @@
     <div class="card-content-container">
         <form id="form-container" class="center" method="POST">
             {% csrf_token %}
-            <span id="login-title">{{active_page}} to Monopoly</span>
+            <span id="login-title">{{action}}</span>
             {% if error %}
-                <span id="login-error" class="card"> {{error}} </span>
+            <span id="login-error" class="card"> {{error}} </span>
             {% endif %}
             {% if active_page == "register" %}
             <div id="login-name-group">
-                <input name="firstname" id="login-first-name" placeholder="First Name"/>
-                <input name="lastname" id="login-last-name" placeholder="Last Name"/>
+                <input name="firstname" id="login-first-name" placeholder="{% trans 'First Name' %}"/>
+                <input name="lastname" id="login-last-name" placeholder="{% trans 'Last Name' %}"/>
             </div>
-            <input name="email" type="email" id="login-email" placeholder="Email"/>
+            <input name="email" type="email" id="login-email" placeholder="{% trans 'Email' %}"/>
             {% endif %}
-            <input name="username" id="login-user-name" placeholder="User Name"/>
-            <input name="password" type="password" id="login-password" placeholder="Password"/>
-            <button type="submit" id="login-submit" class="large-button">{{active_page}}</button>
+            <input name="username" id="login-user-name" placeholder="{% trans 'User Name' %}"/>
+            <input name="password" type="password" id="login-password" placeholder="{% trans 'Password' %}"/>
+            <button type="submit" id="login-submit" class="large-button">
+                {{action}}
+            </button>
         </form>
         <span id="login-switch" class="card">
             {% if active_page == "register" %}
-            Already Signed Up? &nbsp;
-            <a href="/login">Log Into Existing Account</a>
+                {% trans "Already Signed Up?" %} &nbsp;
+                <a href="/login">
+                    {% trans "Log Into Existing Account" %}
+                </a>
             {% else %}
-            New Here? &nbsp;
-            <a href="/register">Create New Account</a>
+                {% trans "New Here?" %} &nbsp;
+                <a href="/register">
+                    {% trans "Create New Account" %}
+                </a>
             {% endif %}
         </span>
     </div>

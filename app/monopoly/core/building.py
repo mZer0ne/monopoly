@@ -59,8 +59,6 @@ class BuildingType(object):
     NOTHING = 2
 
 
-
-
 # def test_answer():
 #     b = Building(1, 1, 1, 1)
 #     assert 1 == b.get_price()

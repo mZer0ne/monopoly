@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html>{% load static %}{% load i18n %}
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
@@ -9,6 +8,40 @@
     {% block files %}{% endblock %}
 </head>
 <body>
+<script>
+    // Default i18n texts
+    const GAME_MODE = {% get_current_language as LANGUAGE_CODE %}"{{ LANGUAGE_CODE }}";
+
+    // Strings
+    let i18n = {
+        "Navigating back... Create your own game!": "{% trans 'Navigating back... Create your own game!' %}",
+        "Waiting for host to start the game...": "{% trans 'Waiting for host to start the game...' %}",
+        "Loading game resources...": "{% trans 'Loading game resources...' %}",
+        "4 Players Max Per Game!": "{% trans '4 Players Max Per Game!' %}",
+        " gets a roll result ": "{% trans ' gets a roll result ' %}",
+        "Welcome to Monopoly": "{% trans 'Welcome to Monopoly' %}",
+        "Permission Denied": "{% trans 'Permission Denied' %}",
+        "Start a New Game": "{% trans 'Start a New Game' %}",
+        "Game Not Found": "{% trans 'Game Not Found' %}",
+        "Start Game": "{% trans 'Start Game' %}",
+        "Hold on...": "{% trans 'Hold on...' %}",
+        "Your Turn!": "{% trans 'Your Turn!' %}",
+        "Get Reward": "{% trans 'Get Reward' %}",
+        "Purchase": "{% trans 'Purchase' %}",
+        "Cancel": "{% trans 'Cancel' %}",
+        " got ": "{% trans ' got ' %}",
+        "Roll": "{% trans 'Roll' %}",
+    };
+
+    // Translate
+    let translate = function (string) {
+        if (typeof i18n[string] === "string") {
+            return i18n[string];
+        }
+        console.log('Translate not found: ', string)
+        return string;
+    }
+</script>
 {% csrf_token %}
 <div id="page-container" class="center">
     {% block content %}{% endblock %}

@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.views import View
-from django.shortcuts import render
-
+from django.utils.translation import gettext as _
 from monopoly.models.session import Session
+from django.shortcuts import render
+from django.views import View
 
 
 # @csrf_protect
 class RegisterView(View):
-    initial = {'active_page': 'register'}
+    initial = {
+        'active_page': 'register',
+        'action': _('Register')
+    }
     template_name = 'login_view.html'
 
     def get(self, request, *args, **kwargs):
@@ -27,10 +30,16 @@ class RegisterView(View):
         successful, auth_or_error = Session().register(conf)
 
         if successful:
-            res = {'active_page': 'register',
-                   "error": "Confirmation sent to your email."}
+            res = {
+                'active_page': 'register',
+                'action': _('Register'),
+                'error': _('Confirmation sent to your email.')
+            }
             return render(request, self.template_name, res)
         else:
-            res = {'active_page': 'register',
-                   "error": auth_or_error}
+            res = {
+                'active_page': 'register',
+                'action': _('Register'),
+                "error": auth_or_error
+            }
             return render(request, self.template_name, res)

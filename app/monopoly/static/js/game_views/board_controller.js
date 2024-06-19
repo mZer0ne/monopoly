@@ -205,7 +205,7 @@ class BoardController {
         });
 
         const defaultTileMaterial = new THREE.MeshLambertMaterial({
-            map: new THREE.TextureLoader().load(`${this.assetsUrl}/tiles/-1.png`)
+            map: new THREE.TextureLoader().load(`${this.assetsUrl}/tiles/${GAME_MODE}/-1.png`)
         });
 
         // tile material
@@ -215,7 +215,7 @@ class BoardController {
             for (let col = 0; col < Board.SIZE; col++) {
                 const tileModelIndex = Board.posToTileId(row, col);
                 const tileMaterial = (tileModelIndex === -1) ? defaultTileMaterial : new THREE.MeshLambertMaterial({
-                    map: new THREE.TextureLoader().load(`${this.assetsUrl}/tiles/${tileModelIndex}.png`)
+                    map: new THREE.TextureLoader().load(`${this.assetsUrl}/tiles/${GAME_MODE}/${tileModelIndex}.png`)
                 });
                 rowMaterial.push(tileMaterial);
             }
