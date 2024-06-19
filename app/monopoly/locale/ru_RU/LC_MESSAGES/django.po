@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 10:28+0000\n"
+"POT-Creation-Date: 2024-06-19 19:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,11 @@ msgstr "Вперед"
 
 #: monopoly/core/board.py:19
 msgid "Warner Hall"
-msgstr "ул. Житня"
+msgstr "ул. Житная"
 
-#: monopoly/core/board.py:20
-#: monopoly/core/board.py:25
-#: monopoly/core/board.py:35
-#: monopoly/core/board.py:40
-#: monopoly/core/board.py:51
-#: monopoly/core/board.py:54
-msgid "Chance"
+#: monopoly/core/board.py:20 monopoly/core/board.py:35
+#: monopoly/core/board.py:51 monopoly/core/land.py:239
+msgid "Community Chest"
 msgstr "Общественная Казна"
 
 #: monopoly/core/board.py:21
@@ -55,6 +51,11 @@ msgstr "Рижская Железная Дорога"
 msgid "College of Fine Art"
 msgstr "Варшавское Шоссе"
 
+#: monopoly/core/board.py:25 monopoly/core/board.py:40
+#: monopoly/core/board.py:54
+msgid "Chance"
+msgstr "Общественная Казна"
+
 #: monopoly/core/board.py:26
 msgid "Posner Hall"
 msgstr "ул. Огарева"
@@ -63,9 +64,8 @@ msgstr "ул. Огарева"
 msgid "Hunt Library"
 msgstr "ул. Первая Парковая"
 
-#: monopoly/core/board.py:28
-#: monopoly/core/board.py:48
-#: monopoly/core/land.py:228
+#: monopoly/core/board.py:28 monopoly/core/board.py:48
+#: monopoly/core/land.py:237
 msgid "AIV Jail"
 msgstr "Тюрьма"
 
@@ -189,27 +189,73 @@ msgstr "Встретьтесь с Гарри Поттером в Доэрти-х
 msgid "Host a fantastic Carnival"
 msgstr "Устройте фантастический карнавал"
 
-#: monopoly/core/land.py:224
+#: monopoly/core/chest_deck.py:12
+msgid "Pay tuition in the amount "
+msgstr "Оплатите обучение в размере "
+
+#: monopoly/core/chest_deck.py:13
+msgid "Bank error in your favor "
+msgstr "Банковская ошибка в вашу пользу, получите "
+
+#: monopoly/core/chest_deck.py:14
+msgid "Income tax refund "
+msgstr "Возмещение подоходного налога, получите "
+
+#: monopoly/core/chest_deck.py:15
+msgid "Vacation fund payment due date, get a "
+msgstr "Наступил срок исполнения платежа по отпускному фонду, получите "
+
+#: monopoly/core/chest_deck.py:16
+msgid "A visit to the doctor, pay "
+msgstr "Визит к врачу, заплатите "
+
+#: monopoly/core/chest_deck.py:17
+msgid "Pay hospitalization expenses in the amount of "
+msgstr "Оплатите расходы на госпитализацию в размере "
+
+#: monopoly/core/chest_deck.py:18
+msgid "Life insurance payment due date has arrived, get a "
+msgstr "Наступил срок исполнения платежа по страхованию жизни, получите "
+
+#: monopoly/core/chest_deck.py:19
+msgid "You came in second place in the beauty pageant, you're gonna get "
+msgstr "Вы заняли второе место на конкурсе красоты, получите "
+
+#: monopoly/core/chest_deck.py:20
+msgid "For consulting services, you'll get "
+msgstr "За консалтинговые услуги получите "
+
+#: monopoly/core/chest_deck.py:21
+#, fuzzy
+#| msgid "You have 1500 million when the game starts."
+msgid "You make money on the sale of shares "
+msgstr "На момент начала игры у вас есть 1500 миллионов."
+
+#: monopoly/core/chest_deck.py:22
+msgid "You're getting an inheritance "
+msgstr "Вы получаете наследство "
+
+#: monopoly/core/land.py:233
 #, fuzzy
 #| msgid "Construction"
 msgid "Construction Land"
 msgstr "Строительство"
 
-#: monopoly/core/land.py:225
+#: monopoly/core/land.py:234
 msgid "Infrastructure"
 msgstr "Инфраструктура"
 
-#: monopoly/core/land.py:226
+#: monopoly/core/land.py:235
 msgid "New Start"
 msgstr "Новое Начало"
 
-#: monopoly/core/land.py:227
+#: monopoly/core/land.py:236
 msgid "Parking "
 msgstr "Стоянка "
 
-#: monopoly/core/land.py:229
+#: monopoly/core/land.py:238
 msgid "Chance Card"
-msgstr "Карточка шанс"
+msgstr "Шанс"
 
 #: monopoly/core/move_result.py:57
 msgid "The price is "
@@ -251,71 +297,71 @@ msgstr "решает строить новое здание или нет. "
 msgid "Nothing actually happened. "
 msgstr "На самом деле ничего не произошло. "
 
-#: monopoly/templates/base.html:17
+#: monopoly/templates/base.html:18
 msgid "Navigating back... Create your own game!"
 msgstr "Возвращаемся назад... Создайте свою собственную игру!"
 
-#: monopoly/templates/base.html:18
+#: monopoly/templates/base.html:19
 msgid "Waiting for host to start the game..."
 msgstr "Ждем, пока хост запустит игру..."
 
-#: monopoly/templates/base.html:19
+#: monopoly/templates/base.html:20
 msgid "Loading game resources..."
 msgstr "Загрузка игровых ресурсов..."
 
-#: monopoly/templates/base.html:20
+#: monopoly/templates/base.html:21
 msgid "4 Players Max Per Game!"
 msgstr "Максимум 4 игрока в игре!"
 
-#: monopoly/templates/base.html:21
+#: monopoly/templates/base.html:22
 msgid " gets a roll result "
 msgstr " выкинул "
 
-#: monopoly/templates/base.html:22
+#: monopoly/templates/base.html:23
 msgid "Welcome to Monopoly"
 msgstr "Добро пожаловать в Монополию"
 
-#: monopoly/templates/base.html:23
+#: monopoly/templates/base.html:24
 msgid "Permission Denied"
 msgstr "Доступ запрещен"
 
-#: monopoly/templates/base.html:24
+#: monopoly/templates/base.html:25
 msgid "Start a New Game"
 msgstr "Начать новую игру"
 
-#: monopoly/templates/base.html:25
+#: monopoly/templates/base.html:26
 msgid "Game Not Found"
 msgstr "Игра не найдена"
 
-#: monopoly/templates/base.html:26
+#: monopoly/templates/base.html:27
 msgid "Start Game"
 msgstr "Начать игру"
 
-#: monopoly/templates/base.html:27
+#: monopoly/templates/base.html:28
 msgid "Hold on..."
 msgstr "Подожди..."
 
-#: monopoly/templates/base.html:28
+#: monopoly/templates/base.html:29
 msgid "Your Turn!"
 msgstr "Твой Ход!"
 
-#: monopoly/templates/base.html:29 monopoly/ws_handlers/modal_title_enum.py:10
+#: monopoly/templates/base.html:30 monopoly/ws_handlers/modal_title_enum.py:10
 msgid "Get Reward"
 msgstr "Получить вознаграждение"
 
-#: monopoly/templates/base.html:30
+#: monopoly/templates/base.html:31
 msgid "Purchase"
 msgstr "Купить"
 
-#: monopoly/templates/base.html:31
+#: monopoly/templates/base.html:32
 msgid "Cancel"
 msgstr "Отмена"
 
-#: monopoly/templates/base.html:32
+#: monopoly/templates/base.html:33
 msgid " got "
 msgstr " выкинул "
 
-#: monopoly/templates/base.html:33
+#: monopoly/templates/base.html:34
 msgid "Roll"
 msgstr "Бросить"
 

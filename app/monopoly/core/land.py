@@ -210,6 +210,14 @@ class ChanceLand(object):
         return None
 
 
+class ChestLand(object):
+    def get_type(self):
+        return LandType.CHEST
+
+    def get_owner_index(self):
+        return None
+
+
 class LandType(object):
     CONSTRUCTION_LAND = 0
     INFRA = 1
@@ -217,6 +225,7 @@ class LandType(object):
     PARKING = 3
     JAIL = 4
     CHANCE = 5
+    CHEST = 6
 
     @staticmethod
     def get_description(val):
@@ -226,6 +235,7 @@ class LandType(object):
             _("New Start"),
             _("Parking "),
             _("AIV Jail"),
-            _("Chance Card")
+            _("Chance Card"),
+            _("Community Chest")
         ]
         return ret[val]

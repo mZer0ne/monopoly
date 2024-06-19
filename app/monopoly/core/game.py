@@ -1,5 +1,6 @@
 from player import Player
 from game_state_type import GameStateType
+from chest_deck import ChestDeck
 from card_deck import CardDeck
 from board import Board
 from move_result import MoveResult
@@ -23,6 +24,7 @@ class Game(object):
         for i in xrange(player_num):
             self._players.append(Player(i))
         self._game_state = GameStateType.WAIT_FOR_ROLL
+        self._chest_deck = ChestDeck()
         self._card_deck = CardDeck()
         self._board = Board()
         self._current_player_index = 0
@@ -139,6 +141,18 @@ class Game(object):
                 val = card.get_money_deduction() * -1
             ret = MoveResult(result_type, val, land)
             ret.set_msg(" Chance Card: " + str(card))
+            return ret
+        elif land_type == LandType.CHEST:
+            print("debug landtype chest")
+            card = self._chest_deck.draw()
+            if card.get_money_deduction() > 0:
+                result_type = MoveResultType.PAYMENT
+                val = card.get_money_deduction()
+            else:
+                result_type = MoveResultType.REWARD
+                val = card.get_money_deduction() * -1
+            ret = MoveResult(result_type, val, land)
+            ret.set_msg(" Chest Card: " + str(card))
             return ret
         else:
             print("Error, the land is", land_type)

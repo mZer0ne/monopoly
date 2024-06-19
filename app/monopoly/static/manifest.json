@@ -1,0 +1,17 @@
+{
+  "start_url": "/?source=webapp",
+  "id": "/?source=webapp",
+  "background_color": "#18191d",
+  "short_name": "Monopoly",
+  "theme_color": "#18191d",
+  "display": "standalone",
+  "name": "Monopoly",
+  "icons": [
+    {
+      "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+      "src": "/static/images/favicon.ico",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ]
+}
