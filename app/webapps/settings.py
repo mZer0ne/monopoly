@@ -19,9 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 config = ConfigParser()
 config.read(os.path.join(BASE_DIR, 'config.ini'))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '7d#m%i!ed32ei5v(i2da*#w9od=_m9u&*6&-6jla1fqdb=66_('
 
@@ -93,8 +90,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'webapps.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -110,8 +105,6 @@ DATABASES = {
 # }
 
 # Password validation
-# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -128,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
 LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
@@ -139,24 +131,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
+# Folders settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'userdata')
+MEDIA_URL = '/userdata/'
 STATIC_URL = '/static/'
 
+# Social settings
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config.get('OAuth', 'GOOGLE_SECRET')
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config.get('OAuth', 'GOOGLE_KEY')
 
+# Email settings
 EMAIL_HOST = config.get('Email', 'Host')
 EMAIL_PORT = config.get('Email', 'Port')
 EMAIL_HOST_USERNAME = config.get('Email', 'User')
 EMAIL_HOST_PASSWORD = config.get('Email', 'Password')
 EMAIL_USE_SSL = True
 
-# print('Email host:port = {host}:{port}, user={user}'.format(
-#     user=EMAIL_HOST_USERNAME,
-#     host=EMAIL_HOST,
-#     port=EMAIL_PORT
-# ))
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'userdata')
-MEDIA_URL = '/userdata/'

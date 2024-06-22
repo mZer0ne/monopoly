@@ -502,10 +502,6 @@ msgstr "Пригласите своих друзей присоединитьс�
 msgid "Generating shared link..."
 msgstr "Создание общей ссылки..."
 
-#: monopoly/templates/join_view.html:46
-msgid "Copied!"
-msgstr "Скопировано!"
-
 #: monopoly/templates/join_view.html:47
 msgid "Copy"
 msgstr "Копировать"
