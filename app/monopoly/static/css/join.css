@@ -12,6 +12,10 @@
   flex-direction: column;
   margin-top: 50px;
 }
+.card-content-container label input[type=checkbox] {
+  height: 16px;
+  width: 16px;
+}
 
 #user-avatar {
   background: #ccc;
@@ -59,6 +63,10 @@
   width: 64px;
   background-size: 64px 64px;
   background-image: url("/static/images/default_avatar.png");
+}
+
+#start-game-offline {
+  margin-bottom: 20px;
 }
 
 #start-game {

@@ -1,7 +1,7 @@
+from monopoly.models import Profile
 from django.shortcuts import render
 from django.views import View
-
-from monopoly.models import Profile
+import hashlib
 
 
 class JoinView(View):
@@ -17,10 +17,17 @@ class JoinView(View):
         except Exception:
             profile = None
 
+        if profile is None:
+            avatar = "https://www.gravatar.com/avatar/" + hashlib.md5(
+                user.email.encode()
+            ).hexdigest() + "?d=robohash&f=y"
+        else:
+            avatar = profile.avatar.url
+
         return render(request, self.template_name, {
             "user": {
                 "name": user.username,
-                "avatar": profile.avatar.url if profile else ""
+                "avatar": avatar
             },
             "host_name": host_name if len(host_name) else user.username
         })

@@ -8,6 +8,8 @@ class MoveResultType(object):
     STOP_ROUND = 3
     CONSTRUCTION_OPTION = 4
     NOTHING = 5
+    TAX = 6
+    GO_TO = 7
 
     @staticmethod
     def get_description(val):
@@ -17,6 +19,7 @@ class MoveResultType(object):
             _("is rewarded a fortune. "),
             _("is stopped for one round. "),
             _("is choosing to build a new building or not. "),
-            _("Nothing actually happened. ")
+            _("Nothing actually happened. "),
+            _("pay tax in the amount. ")
         ]
         return ret[val]

@@ -19,7 +19,7 @@ class Board(object):
         self._lands.append(Land(1, _("Warner Hall"), ConstructionLand(60)))
         self._lands.append(Land(2, _("Community Chest"), ChestLand()))
         self._lands.append(Land(3, _("UC"), ConstructionLand(60)))
-        self._lands.append(Land(4, _("Union Grill"), Infra(150)))
+        self._lands.append(Land(4, _("Union Grill"), TaxLand(200)))
         self._lands.append(Land(5, _("AB route"), Infra(200)))
         self._lands.append(Land(6, _("College of Fine Art"), ConstructionLand(100)))
         self._lands.append(Land(7, _("Chance"), ChanceLand()))
@@ -53,8 +53,9 @@ class Board(object):
         self._lands.append(Land(35, _("Monorail"), Infra(200)))
         self._lands.append(Land(36, _("Chance"), ChanceLand()))
         self._lands.append(Land(37, _("Information Networking Institute"), ConstructionLand(350)))
-        self._lands.append(Land(38, _("Pasta Vilaggio"), Infra(150)))
+        self._lands.append(Land(38, _("Pasta Vilaggio"), TaxLand(100)))
         self._lands.append(Land(39, _("Mellon Institute"), ConstructionLand(400)))
+
 
     def get_grid_num(self):
         return len(self._lands)

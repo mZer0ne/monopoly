@@ -178,6 +178,22 @@ class StartLand(object):
         return None
 
 
+class TaxLand(object):
+    # _reward = 0
+
+    def __init__(self, tax):
+        self._tax = tax
+
+    def get_payment(self):
+        return self._tax
+
+    def get_type(self):
+        return LandType.TAX
+
+    def get_owner_index(self):
+        return None
+
+
 class JailLand(object):
     # _stops = 0
 
@@ -226,6 +242,7 @@ class LandType(object):
     JAIL = 4
     CHANCE = 5
     CHEST = 6
+    TAX = 7
 
     @staticmethod
     def get_description(val):
@@ -236,6 +253,7 @@ class LandType(object):
             _("Parking "),
             _("AIV Jail"),
             _("Chance Card"),
-            _("Community Chest")
+            _("Community Chest"),
+            _("TAX")
         ]
         return ret[val]

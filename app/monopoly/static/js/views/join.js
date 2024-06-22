@@ -30,7 +30,14 @@ class JoinView {
     initComponents() {
         this.$usersContainer = document.getElementById("joined-users-container");
         this.$newGameNotice = document.getElementById("new-game-notice");
+
+        this.$offlineGame = document.getElementById("start-game-offline");
         this.$startGame = document.getElementById("start-game");
+
+        this.$offlineGame.addEventListener("click", () => {
+            this.startGame(true);
+        });
+
         this.$startGame.addEventListener("click", () => {
             this.startGame();
         });
@@ -46,8 +53,8 @@ class JoinView {
             })
         }
 
-        const isProfileInited = document.getElementById("user-avatar").getAttribute("src").length !== 0;
-        if (!isProfileInited) {
+        const isProfileInited = document.getElementById("user-avatar").getAttribute("src");
+        if (isProfileInited.indexOf("gravatar.com") > 0) {
             const $addProfileButton = document.getElementById("init-profile");
             $addProfileButton.classList.remove("hidden");
         }
@@ -75,6 +82,7 @@ class JoinView {
                 }
             }
         } else if (message.action === "start") {
+            // console.log(message);
             this.navigateToGame();
         } else if (message.action === "fail_join") {
             this.$startGame.disabled = true;
@@ -99,8 +107,9 @@ class JoinView {
         }
     }
 
-    startGame() {
+    startGame(offlineMode = false) {
         this.socket.send(JSON.stringify({
+            offline: offlineMode.toString(),
             action: "start"
         }));
     }

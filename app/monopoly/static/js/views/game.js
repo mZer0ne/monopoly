@@ -8,6 +8,7 @@ class GameView {
         this.audioManager.play("background");
 
         this.gameInProcess = true;
+        this.offlineGame = false;
     }
 
     initComponents() {
@@ -73,6 +74,7 @@ class GameView {
 
         this.socket.onmessage = (event) => {
             const message = JSON.parse(event.data);
+            console.log(message);
             this.handleStatusChange(message);
         };
     }
@@ -176,10 +178,10 @@ class GameView {
         $nextUserGroup.classList.add("active");
 
         this.currentPlayer = nextPlayer;
-        let title = (this.currentPlayer === this.myPlayerIndex) ? translate("Your Turn!") : "";
+        let title = (this.currentPlayer === this.myPlayerIndex || this.offlineGame) ? translate("Your Turn!") : "";
 
         // role dice
-        const button = (nextPlayer !== this.myPlayerIndex) ? [] :
+        const button = (nextPlayer !== this.myPlayerIndex && !this.offlineGame) ? [] :
             [{
                 text: translate("Roll"),
                 callback: () => {
@@ -248,7 +250,7 @@ class GameView {
             this.$modalCard.classList.remove("modal-hidden");
 
             // hide modal after a period of time if displayTime is set
-            if (displayTime !== undefined && displayTime > 0) {
+            if (buttons.length === 0 && displayTime !== undefined && displayTime > 0) {
                 setTimeout(async () => {
                     await this.hideModal(true);
                     resolve();
@@ -285,6 +287,14 @@ class GameView {
         let landname = message.landname;
         let owners = message.owners;
         let houses = message.houses;
+
+        // Detect offline mode
+        players.forEach((player) => {
+            if (player.userName === 'guest') {
+                this.offlineGame = true;
+            }
+        })
+
         this.initGame(players, changeCash, posChange);
 
         await this.gameLoadingPromise;
@@ -309,7 +319,7 @@ class GameView {
         if (message.waitDecision === "false") {
             this.changePlayer(nextPlayer, this.onDiceRolled.bind(this));
         } else {
-            const buttons = (this.myPlayerIndex === nextPlayer) ? [{
+            const buttons = (this.myPlayerIndex === nextPlayer || this.offlineGame) ? [{
                 text: translate("Purchase"),
                 callback: this.confirmDecision.bind(this)
             }, {
@@ -338,7 +348,7 @@ class GameView {
         let landname = message.landname;
         let rollResMsg = this.players[currPlayer].userName + translate(" gets a roll result ") + steps.toString();
 
-        await this.showModal(currPlayer, this.players[currPlayer].userName + translate(" got ") + steps.toString(), "", "", [], 2);
+        await this.showModal(currPlayer, this.players[currPlayer].userName + translate(" got ") + steps.toString(), "", "", [], 3);
 
         await this.gameController.movePlayer(currPlayer, newPos);
 
@@ -350,11 +360,11 @@ class GameView {
                 let cash = message.curr_cash;
                 this.changeCashAmount(cash);
             }
-            await this.showModal(currPlayer, translate("Get Reward"), translate("Start point"), eventMsg, [], 2);
+            await this.showModal(currPlayer, translate("Get Reward"), translate("Start point"), eventMsg, [], 3);
         }
 
         if (message.is_option === "true") {
-            const buttons = (this.myPlayerIndex === currPlayer) ? [{
+            const buttons = (this.myPlayerIndex === currPlayer || this.offlineGame) ? [{
                 text: translate("Purchase"),
                 callback: this.confirmDecision.bind(this)
             }, {
@@ -364,15 +374,28 @@ class GameView {
 
             this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, buttons);
         } else {
+            let self = this;
+            const button = (this.offlineGame === true) ? [{
+                text: translate("Close"),
+                callback: () => {
+                    self.changePlayer(nextPlayer, self.onDiceRolled.bind(this));
+                    self.audioManager.play("cash");
+                }
+            }] : [];
+
             if (message.is_cash_change === "true") {
-                await this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, [], 3);
+                await this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, button, 3);
                 let cash = message.curr_cash;
                 this.changeCashAmount(cash);
-                this.audioManager.play("cash");
-                this.changePlayer(nextPlayer, this.onDiceRolled.bind(this));
+                if (this.offlineGame === false) {
+                    self.changePlayer(nextPlayer, self.onDiceRolled.bind(this));
+                    this.audioManager.play("cash");
+                }
             } else if (message.new_event === "true") {
-                await this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, [], 3);
-                this.changePlayer(nextPlayer, this.onDiceRolled.bind(this));
+                await this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, button, 3);
+                if (this.offlineGame === false) {
+                    self.changePlayer(nextPlayer, self.onDiceRolled.bind(this));
+                }
             } else {
                 this.changePlayer(nextPlayer, this.onDiceRolled.bind(this));
             }
@@ -453,6 +476,14 @@ class GameView {
     async cancelDecision() {
         this.socket.send(JSON.stringify({
             action: "cancel_decision",
+            hostname: this.hostName,
+        }));
+        await this.hideModal(true);
+    }
+
+    async closeDecision() {
+        this.socket.send(JSON.stringify({
+            action: "close_decision",
             hostname: this.hostName,
         }));
         await this.hideModal(true);

@@ -10,6 +10,7 @@ class ModalTitleType():
             _("Get Reward"),
             _("Stop One Round"),
             _("Build a House"),
-            _("Nothing actually happened")
+            _("Nothing actually happened"),
+            _("Paying taxes")
         ]
         return ret[val]

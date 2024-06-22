@@ -26,9 +26,15 @@
                 <img class="joined-user-avatar" src="{{ user.avatar }}" title="{{ user.name }}">
             </a>
         </div>
+
         <button id="start-game" class="large-button" disabled>
             {% trans 'Waiting for friends to join...' %}
         </button>
+
+        <button id="start-game-offline" class="large-button">
+            {% trans 'Offline game (2 players)' %}
+        </button>
+
         <a href="/profile/{{ user.name }}" target="_blank">
             <button id="init-profile" class="large-button hidden">
                 {% trans 'Let your friends recognize you with a profile photo!' %}

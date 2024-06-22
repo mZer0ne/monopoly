@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-22 14:03+0000\n"
+"POT-Creation-Date: 2024-06-22 16:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -486,59 +486,63 @@ msgstr "Игра заканчивается после того, как у пе�
 msgid "New Game!"
 msgstr "Новая игра"
 
-#: monopoly/templates/join_view.html:30
+#: monopoly/templates/join_view.html:31
 msgid "Waiting for friends to join..."
 msgstr "Ждем друзей..."
 
-#: monopoly/templates/join_view.html:34
+#: monopoly/templates/join_view.html:35
+msgid "Offline game (2 players)"
+msgstr "Офлайн-игра (2 игрока)"
+
+#: monopoly/templates/join_view.html:40
 msgid "Let your friends recognize you with a profile photo!"
 msgstr "Пусть ваши друзья узнают вас по аватару!"
 
-#: monopoly/templates/join_view.html:40
+#: monopoly/templates/join_view.html:46
 msgid "Invite your friends to join the game by sharing the link."
 msgstr "Пригласите своих друзей присоединиться к игре."
 
-#: monopoly/templates/join_view.html:43
+#: monopoly/templates/join_view.html:49
 msgid "Generating shared link..."
 msgstr "Создание общей ссылки..."
 
-#: monopoly/templates/join_view.html:47
+#: monopoly/templates/join_view.html:53
 msgid "Copy"
 msgstr "Копировать"
 
-#: monopoly/templates/login_view.html:27
+#: monopoly/templates/login_view.html:25
 msgid "First Name"
 msgstr "Имя"
 
-#: monopoly/templates/login_view.html:28
+#: monopoly/templates/login_view.html:26
 msgid "Last Name"
 msgstr "Фамилия"
 
-#: monopoly/templates/login_view.html:30
+#: monopoly/templates/login_view.html:28
 msgid "Email"
 msgstr "Email"
 
-#: monopoly/templates/login_view.html:32
+#: monopoly/templates/login_view.html:30
 msgid "User Name"
 msgstr "Логин"
 
-#: monopoly/templates/login_view.html:33
+#: monopoly/templates/login_view.html:31
 msgid "Password"
 msgstr "Пароль"
 
-#: monopoly/templates/login_view.html:40
+#: monopoly/templates/login_view.html:38
 msgid "Already Signed Up?"
 msgstr "Уже зарегистрированы?"
 
-#: monopoly/templates/login_view.html:42
+#: monopoly/templates/login_view.html:40
 msgid "Log Into Existing Account"
 msgstr "Авторизация"
 
-#: monopoly/templates/login_view.html:45
+#: monopoly/templates/login_view.html:43
 msgid "New Here?"
 msgstr "Впервые здесь?"
 
-#: monopoly/templates/login_view.html:47
+#: monopoly/templates/login_view.html:45
 msgid "Create New Account"
 msgstr "Зарегистрироваться"
 

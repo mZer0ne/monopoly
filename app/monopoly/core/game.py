@@ -120,6 +120,12 @@ class Game(object):
             result_type = MoveResultType.REWARD
             val = START_REWARD
             return MoveResult(result_type, val, land)
+        elif land_type == LandType.TAX:
+            print("debug75")
+            tax_land = land.get_content()
+            result_type = MoveResultType.PAYMENT
+            val = tax_land.get_payment()
+            return MoveResult(result_type, val, land)
         elif land_type == LandType.PARKING:
             print("debug80")
             result_type = MoveResultType.NOTHING
@@ -272,6 +278,7 @@ class Game(object):
             steps1 = random.randint(1, 6)
             steps2 = random.randint(1, 6)
             steps = steps1 + steps2
+            # steps = 4
         land_dest = self._move(steps)
         if land_dest is None:
             # print('debug262, the move result is None')

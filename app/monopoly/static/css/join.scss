@@ -11,6 +11,12 @@
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  label{
+    input[type="checkbox"] {
+      height: 16px;
+      width: 16px;
+    }
+  }
 }
 
 #user-avatar {
@@ -63,9 +69,14 @@
   }
 }
 
+#start-game-offline {
+  margin-bottom: 20px;
+}
+
 #start-game {
   margin: 20px 0;
 }
+
 
 input {
   color: #666;

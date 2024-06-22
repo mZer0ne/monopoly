@@ -22,6 +22,7 @@ class ProfileView(View):
             return render(request, "404.html", {})
 
 
+
         try:
             self.profile_info = Profile.objects.get(user=self.profile_user)
         except Exception:

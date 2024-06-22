@@ -87,7 +87,7 @@ def ws_message(message):
     print('hostname is: ', hostname)
 
     if action == "start":
-        handle_start(hostname)
+        handle_start(hostname, msg["offline"])
     if action == "roll":
         handle_roll(hostname, games, changehandlers)
     if action == "confirm_decision":
@@ -111,15 +111,19 @@ def ws_connect_for_start(message):
     print('now is connecting for start')
 
 
-def build_start_msg():
-    ret = {"action": "start"}
+def build_start_msg(multiplayer):
+    ret = {
+        "multiplayer": multiplayer,
+        "action": "start"
+    }
     print(json.dumps(ret))
     return json.dumps(ret)
 
 
 def build_join_failed_msg():
-    ret = {"action": "fail_join",
-           }
+    ret = {
+        "action": "fail_join",
+    }
     print(json.dumps(ret))
     return json.dumps(ret)
 
@@ -158,20 +162,22 @@ def add_player(room_name, player_name):
     return True
 
 
-def handle_start(hostname):
+def handle_start(hostname, multiplayer):
     # init game
-    if hostname not in games:
+    if hostname:
+        if multiplayer == 'true':
+            add_player(hostname, "guest")
+
         players = rooms[hostname]
         player_num = len(players)
         game = Game(player_num)
         games[hostname] = game
-
         change_handler = ChangeHandler(game, hostname)
         game.add_game_change_listner(change_handler)
         changehandlers[hostname] = change_handler
 
     Group(hostname).send({
-        "text": build_start_msg()
+        "text": build_start_msg(multiplayer)
     })
     print(len(games))
     print("start finish")
