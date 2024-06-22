@@ -73,6 +73,21 @@ input {
 .card-content-container {
   position: relative;
 }
+.card-content-container .social-auth {
+  text-align: center;
+  padding: 0.5rem;
+}
+.card-content-container .social-auth a {
+  background-color: #dd483c;
+  display: inline-block;
+  border-radius: 15%;
+  padding: 0.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+.card-content-container .social-auth a svg > path {
+  fill: white;
+}
 
 #login-error {
   display: flex;

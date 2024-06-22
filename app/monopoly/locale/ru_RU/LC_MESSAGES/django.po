@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 19:35+0000\n"
+"POT-Creation-Date: 2024-06-22 14:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgid "Warner Hall"
 msgstr "ул. Житная"
 
 #: monopoly/core/board.py:20 monopoly/core/board.py:35
-#: monopoly/core/board.py:51 monopoly/core/land.py:239
+#: monopoly/core/board.py:51 monopoly/core/land.py:256
 msgid "Community Chest"
 msgstr "Общественная Казна"
 
@@ -65,7 +65,7 @@ msgid "Hunt Library"
 msgstr "ул. Первая Парковая"
 
 #: monopoly/core/board.py:28 monopoly/core/board.py:48
-#: monopoly/core/land.py:237
+#: monopoly/core/land.py:254
 msgid "AIV Jail"
 msgstr "Тюрьма"
 
@@ -235,67 +235,77 @@ msgstr "На момент начала игры у вас есть 1500 милл
 msgid "You're getting an inheritance "
 msgstr "Вы получаете наследство "
 
-#: monopoly/core/land.py:233
+#: monopoly/core/land.py:250
 #, fuzzy
 #| msgid "Construction"
 msgid "Construction Land"
 msgstr "Строительство"
 
-#: monopoly/core/land.py:234
+#: monopoly/core/land.py:251
 msgid "Infrastructure"
 msgstr "Инфраструктура"
 
-#: monopoly/core/land.py:235
+#: monopoly/core/land.py:252
 msgid "New Start"
 msgstr "Новое Начало"
 
-#: monopoly/core/land.py:236
+#: monopoly/core/land.py:253
 msgid "Parking "
 msgstr "Стоянка "
 
-#: monopoly/core/land.py:238
+#: monopoly/core/land.py:255
 msgid "Chance Card"
 msgstr "Шанс"
+
+#: monopoly/core/land.py:257
+msgid "TAX"
+msgstr ""
 
 #: monopoly/core/move_result.py:57
 msgid "The price is "
 msgstr "Цена "
 
-#: monopoly/core/move_result.py:59
+#: monopoly/core/move_result.py:60
 msgid "The payment amount is "
 msgstr "Сумма платежа составляет "
 
-#: monopoly/core/move_result.py:61
+#: monopoly/core/move_result.py:62
 msgid "The award amount is "
 msgstr "Сумма премии составляет "
 
-#: monopoly/core/move_result.py:65
+#: monopoly/core/move_result.py:66
 msgid "The cost for the building is "
 msgstr "Стоимость здания составляет "
 
-#: monopoly/core/move_result_enum.py:15
+#: monopoly/core/move_result_enum.py:17
 msgid "is choosing to buy or not. "
 msgstr "решает покупать или нет. "
 
-#: monopoly/core/move_result_enum.py:16
+#: monopoly/core/move_result_enum.py:18
 msgid "should make a payment. "
 msgstr "должен произвести оплату. "
 
-#: monopoly/core/move_result_enum.py:17
+#: monopoly/core/move_result_enum.py:19
 msgid "is rewarded a fortune. "
 msgstr "получил целое состояние. "
 
-#: monopoly/core/move_result_enum.py:18
+#: monopoly/core/move_result_enum.py:20
 msgid "is stopped for one round. "
 msgstr "останавливается на один раунд. "
 
-#: monopoly/core/move_result_enum.py:19
+#: monopoly/core/move_result_enum.py:21
 msgid "is choosing to build a new building or not. "
 msgstr "решает строить новое здание или нет. "
 
-#: monopoly/core/move_result_enum.py:20
+#: monopoly/core/move_result_enum.py:22
 msgid "Nothing actually happened. "
 msgstr "На самом деле ничего не произошло. "
+
+#: monopoly/core/move_result_enum.py:23
+#, fuzzy
+#| msgid "Pay tuition in the amount "
+msgid "pay tax in the amount. "
+msgstr "Оплатите обучение в размере "
 
 #: monopoly/templates/base.html:18
 msgid "Navigating back... Create your own game!"
@@ -486,7 +496,7 @@ msgstr "Пусть ваши друзья узнают вас по аватару
 
 #: monopoly/templates/join_view.html:40
 msgid "Invite your friends to join the game by sharing the link."
-msgstr "Пригласите своих друзей присоединиться к игре, поделившись ссылкой."
+msgstr "Пригласите своих друзей присоединиться к игре."
 
 #: monopoly/templates/join_view.html:43
 msgid "Generating shared link..."
@@ -500,39 +510,39 @@ msgstr "Скопировано!"
 msgid "Copy"
 msgstr "Копировать"
 
-#: monopoly/templates/login_view.html:25
+#: monopoly/templates/login_view.html:27
 msgid "First Name"
 msgstr "Имя"
 
-#: monopoly/templates/login_view.html:26
+#: monopoly/templates/login_view.html:28
 msgid "Last Name"
 msgstr "Фамилия"
 
-#: monopoly/templates/login_view.html:28
+#: monopoly/templates/login_view.html:30
 msgid "Email"
 msgstr "Email"
 
-#: monopoly/templates/login_view.html:30
+#: monopoly/templates/login_view.html:32
 msgid "User Name"
 msgstr "Логин"
 
-#: monopoly/templates/login_view.html:31
+#: monopoly/templates/login_view.html:33
 msgid "Password"
 msgstr "Пароль"
 
-#: monopoly/templates/login_view.html:38
+#: monopoly/templates/login_view.html:40
 msgid "Already Signed Up?"
 msgstr "Уже зарегистрированы?"
 
-#: monopoly/templates/login_view.html:40
+#: monopoly/templates/login_view.html:42
 msgid "Log Into Existing Account"
 msgstr "Авторизация"
 
-#: monopoly/templates/login_view.html:43
+#: monopoly/templates/login_view.html:45
 msgid "New Here?"
 msgstr "Впервые здесь?"
 
-#: monopoly/templates/login_view.html:45
+#: monopoly/templates/login_view.html:47
 msgid "Create New Account"
 msgstr "Зарегистрироваться"
 
@@ -580,11 +590,11 @@ msgstr "Подтверждение отправлено на вашу элект
 
 #: monopoly/ws_handlers/modal_title_enum.py:8
 msgid "Purchase Land"
-msgstr "Купить Клетку"
+msgstr "Покупка"
 
 #: monopoly/ws_handlers/modal_title_enum.py:9
 msgid "Make a Payment"
-msgstr "должен произвести оплату. "
+msgstr "Оплатить"
 
 #: monopoly/ws_handlers/modal_title_enum.py:11
 msgid "Stop One Round"
@@ -599,6 +609,12 @@ msgstr "построить один дом за 100$"
 #| msgid "Nothing actually happened. "
 msgid "Nothing actually happened"
 msgstr "На самом деле ничего не произошло. "
+
+#: monopoly/ws_handlers/modal_title_enum.py:14
+#, fuzzy
+#| msgid "Parking "
+msgid "Paying taxes"
+msgstr "Стоянка "
 
 #, fuzzy
 #~| msgid "Navigating back... Create your own game!"

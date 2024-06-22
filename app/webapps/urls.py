@@ -19,7 +19,7 @@ from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = [
-    url('^social/', include('social_django.urls', namespace='social')),
+    url(r'^social/', include('social_django.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('monopoly.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
