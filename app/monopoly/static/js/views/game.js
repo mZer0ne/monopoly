@@ -225,8 +225,8 @@ class GameView {
             this.$modalMessage.innerHTML = message;
             this.$modalButtons.innerHTML = "";
 
-            this.$modalTitle.innerText = title;
-            this.$modalSubTitle.innerText = subTitle;
+            this.$modalTitle.innerHTML = title;
+            this.$modalSubTitle.innerHTML = subTitle;
 
             for (let i in buttons) {
                 let button = document.createElement("button");
@@ -326,8 +326,8 @@ class GameView {
                 text: translate("Cancel"),
                 callback: this.cancelDecision.bind(this)
             }] : [];
-            eventMsg = this.players[nextPlayer].userName + " " + eventMsg;
-            this.showModal(nextPlayer, title, landname, eventMsg, buttons);
+            eventMsg = this.getUserName(this.players[nextPlayer]) + " " + eventMsg;
+            this.showModal(nextPlayer, landname, title, eventMsg, buttons);
         }
     }
 
@@ -346,16 +346,16 @@ class GameView {
         let eventMsg = message.result;
         let title = message.title;
         let landname = message.landname;
-        let rollResMsg = this.players[currPlayer].userName + translate(" gets a roll result ") + steps.toString();
+        let rollResMsg = this.getUserName(this.players[currPlayer]) + translate(" gets a roll result ") + steps.toString();
 
-        await this.showModal(currPlayer, this.players[currPlayer].userName + translate(" got ") + steps.toString(), "", "", [], 3);
+        await this.showModal(currPlayer, this.getUserName(this.players[currPlayer]) + translate(" got ") + steps.toString(), "", "", [], 3);
 
         await this.gameController.movePlayer(currPlayer, newPos);
 
         this.audioManager.play("move");
 
         if (message.bypass_start === "true") {
-            let eventMsg = this.players[currPlayer].userName + translate(" has passed the start point, reward 200.");
+            let eventMsg = this.getUserName(this.players[currPlayer]) + translate(" has passed the start point, reward 200.");
             if (message.is_cash_change !== "true") {
                 let cash = message.curr_cash;
                 this.changeCashAmount(cash);
@@ -372,7 +372,7 @@ class GameView {
                 callback: this.cancelDecision.bind(this)
             }] : [];
 
-            this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, buttons);
+            this.showModal(currPlayer, landname, title, this.getUserName(this.players[currPlayer]) + eventMsg, buttons);
         } else {
             let self = this;
             const button = (this.offlineGame === true) ? [{
@@ -384,7 +384,7 @@ class GameView {
             }] : [];
 
             if (message.is_cash_change === "true") {
-                await this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, button, 3);
+                await this.showModal(currPlayer, landname, title, this.getUserName(this.players[currPlayer]) + eventMsg, button, 3);
                 let cash = message.curr_cash;
                 this.changeCashAmount(cash);
                 if (this.offlineGame === false) {
@@ -392,7 +392,7 @@ class GameView {
                     this.audioManager.play("cash");
                 }
             } else if (message.new_event === "true") {
-                await this.showModal(currPlayer, title, landname, this.players[currPlayer].userName + eventMsg, button, 3);
+                await this.showModal(currPlayer, landname, title, this.getUserName(this.players[currPlayer]) + eventMsg, button, 3);
                 if (this.offlineGame === false) {
                     self.changePlayer(nextPlayer, self.onDiceRolled.bind(this));
                 }
@@ -511,6 +511,15 @@ class GameView {
             content: message,
         }));
         this.$chatMessageToSend.value = "";
+    }
+
+    /*
+     * Draw username
+     */
+    getUserName(currentUser) {
+
+        return "<strong>" + currentUser.firstName + " " + currentUser.lastName.charAt(0) + ".</strong>";
+        // return currentUser.userName;
     }
 
     /*

@@ -7,9 +7,10 @@ from monopoly.models import Profile
 from django.contrib.auth.models import User
 from core.game import *
 
-import json
-from monopoly.ws_handlers.game_handler import *
 from monopoly.ws_handlers.game_change_handler import *
+from monopoly.ws_handlers.game_handler import *
+import hashlib
+import json
 
 # Connected to websocket.connect
 # @login_required
@@ -140,12 +141,19 @@ def build_join_reply_msg(room_name):
             profile = Profile.objects.get(user=profile_user)
         except Exception:
             profile = None
-        avatar = profile.avatar.url if profile else ""
+
+        if profile is None:
+            avatar = "https://www.gravatar.com/avatar/" + hashlib.md5(
+                profile_user.email.encode()
+            ).hexdigest() + "?d=robohash&f=y"
+        else:
+            avatar = profile.avatar.url
         data.append({"id": profile_user.id, "name": player, "avatar": avatar})
 
-    ret = {"action": "join",
-           "data": data
-           }
+    ret = {
+        "action": "join",
+        "data": data
+    }
     print(json.dumps(ret))
     return json.dumps(ret)
 

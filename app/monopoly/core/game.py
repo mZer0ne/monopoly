@@ -17,8 +17,9 @@ class Game(object):
     def __init__(self, player_num):
         # assert 0 < player_num <= 4
         if player_num <= 0 or player_num > 4:
-            self.notify_error("In correct player number, should be 1-4 "
-                              "players.")
+            self.notify_error(
+                "In correct player number, should be 1-4 players."
+            )
             return
         self._players = []
         for i in xrange(player_num):
@@ -146,7 +147,8 @@ class Game(object):
                 result_type = MoveResultType.REWARD
                 val = card.get_money_deduction() * -1
             ret = MoveResult(result_type, val, land)
-            ret.set_msg(" Chance Card: " + str(card))
+            # ret.set_msg(" Chance Card: " + str(card))
+            ret.set_msg(" " + str(card))
             return ret
         elif land_type == LandType.CHEST:
             print("debug landtype chest")
@@ -158,7 +160,8 @@ class Game(object):
                 result_type = MoveResultType.REWARD
                 val = card.get_money_deduction() * -1
             ret = MoveResult(result_type, val, land)
-            ret.set_msg(" Chest Card: " + str(card))
+            # ret.set_msg(" Chest Card: " + str(card))
+            ret.set_msg(" " + str(card))
             return ret
         else:
             print("Error, the land is", land_type)

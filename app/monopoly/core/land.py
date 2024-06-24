@@ -194,6 +194,22 @@ class TaxLand(object):
         return None
 
 
+class VisitingJailLand(object):
+    # _stops = 0
+
+    def __init__(self, stops):
+        self._stops = stops
+
+    def get_stop_num(self):
+        return self._stops
+
+    def get_type(self):
+        return LandType.JAIL
+
+    def get_owner_index(self):
+        return None
+
+
 class JailLand(object):
     # _stops = 0
 

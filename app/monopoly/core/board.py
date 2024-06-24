@@ -25,7 +25,7 @@ class Board(object):
         self._lands.append(Land(7, _("Chance"), ChanceLand()))
         self._lands.append(Land(8, _("Posner Hall"), ConstructionLand(100)))
         self._lands.append(Land(9, _("Hunt Library"), ConstructionLand(120)))
-        self._lands.append(Land(10, _("AIV Jail"), JailLand(1)))
+        self._lands.append(Land(10, _("AIV Jail"), VisitingJailLand(0)))
         self._lands.append(Land(11, _("Doherty Hall"), ConstructionLand(140)))
         self._lands.append(Land(12, _("Entropy+"), Infra(150)))
         self._lands.append(Land(13, _("Gasling Stadium"), ConstructionLand(140)))

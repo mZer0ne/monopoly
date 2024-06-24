@@ -54,16 +54,16 @@ class MoveResult(object):
         saying = self.msg if self.msg else ""
         saying += " " + MoveResultType.get_description(self.move_result_type)
         if self.move_result_type == MoveResultType.BUY_LAND_OPTION:
-            saying += _("The price is ") + str(self.value)
+            saying += _("The price is ") + str(self.value) + "$"
         elif self.move_result_type == MoveResultType.PAYMENT or \
                 self.move_result_type == MoveResultType.TAX:
-            saying += _("The payment amount is ") + str(self.value)
+            saying += _("The payment amount is ") + str(self.value) + "$"
         elif self.move_result_type == MoveResultType.REWARD:
-            saying += _("The award amount is ") + str(self.value)
+            saying += _("The award amount is ") + str(self.value) + "$"
         elif self.move_result_type == MoveResultType.STOP_ROUND:
             pass
         elif self.move_result_type == MoveResultType.CONSTRUCTION_OPTION:
-            saying += _("The cost for the building is ") + str(self.value)
+            saying += _("The cost for the building is ") + str(self.value) + "$"
         else:
             pass
 
