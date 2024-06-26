@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 09:17+0000\n"
+"POT-Creation-Date: 2024-06-24 10:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -275,7 +275,7 @@ msgstr "Получите "
 
 #: monopoly/core/move_result.py:66
 msgid "The cost for the building is "
-msgstr "Стоимость здания составляет "
+msgstr "Стоимость постройки составляет "
 
 #: monopoly/core/move_result_enum.py:17
 msgid "is choosing to buy or not. "
@@ -307,192 +307,192 @@ msgstr "На самом деле ничего не произошло. "
 msgid "pay tax in the amount. "
 msgstr "Оплатите обучение в размере "
 
-#: monopoly/templates/base.html:18
+#: monopoly/templates/base.html:19
 msgid " has passed the start point, reward 200."
 msgstr " прошел стартовую точку, награда 200."
 
-#: monopoly/templates/base.html:19
+#: monopoly/templates/base.html:20
 msgid "Navigating back... Create your own game!"
 msgstr "Возвращаемся назад... Создайте новую игру!"
 
-#: monopoly/templates/base.html:20
+#: monopoly/templates/base.html:21
 msgid "Waiting for host to start the game..."
 msgstr "Ждем, пока хост запустит игру..."
 
-#: monopoly/templates/base.html:21
+#: monopoly/templates/base.html:22
 msgid "Loading game resources..."
 msgstr "Загрузка игровых ресурсов..."
 
-#: monopoly/templates/base.html:22
+#: monopoly/templates/base.html:23
 msgid "4 Players Max Per Game!"
 msgstr "Максимум 4 игрока в игре!"
 
-#: monopoly/templates/base.html:23
+#: monopoly/templates/base.html:24
 msgid " gets a roll result "
 msgstr " выкинул "
 
-#: monopoly/templates/base.html:24
+#: monopoly/templates/base.html:25
 msgid "Welcome to Monopoly"
 msgstr "Добро пожаловать в Монополию"
 
-#: monopoly/templates/base.html:25
+#: monopoly/templates/base.html:26
 msgid "Permission Denied"
 msgstr "Доступ запрещен"
 
-#: monopoly/templates/base.html:26
+#: monopoly/templates/base.html:27
 msgid "Start a New Game"
 msgstr "Начать новую игру"
 
-#: monopoly/templates/base.html:27
+#: monopoly/templates/base.html:28
 msgid "Game Not Found"
 msgstr "Игра не найдена"
 
-#: monopoly/templates/base.html:28
+#: monopoly/templates/base.html:29
 #, fuzzy
 #| msgid "New Start"
 msgid "Start point"
 msgstr "Вперед"
 
-#: monopoly/templates/base.html:29
+#: monopoly/templates/base.html:30
 msgid "Start Game"
 msgstr "Начать игру"
 
-#: monopoly/templates/base.html:30
+#: monopoly/templates/base.html:31
 msgid "Hold on..."
 msgstr "Подожди..."
 
-#: monopoly/templates/base.html:31
+#: monopoly/templates/base.html:32
 msgid "Your Turn!"
 msgstr "Твой Ход!"
 
-#: monopoly/templates/base.html:32 monopoly/ws_handlers/modal_title_enum.py:10
+#: monopoly/templates/base.html:33 monopoly/ws_handlers/modal_title_enum.py:10
 msgid "Get Reward"
 msgstr "Вознаграждение"
 
-#: monopoly/templates/base.html:33
+#: monopoly/templates/base.html:34
 msgid "Purchase"
 msgstr "Купить"
 
-#: monopoly/templates/base.html:34
+#: monopoly/templates/base.html:35
 msgid "Cancel"
 msgstr "Отмена"
 
-#: monopoly/templates/base.html:35
+#: monopoly/templates/base.html:36
 msgid "Close"
 msgstr "Закрыть"
 
-#: monopoly/templates/base.html:36
+#: monopoly/templates/base.html:37
 msgid " got "
 msgstr " выкинул "
 
-#: monopoly/templates/base.html:37
+#: monopoly/templates/base.html:38
 msgid "Roll"
 msgstr "Бросить"
 
-#: monopoly/templates/game_view.html:57
+#: monopoly/templates/game_view.html:58
 msgid "Message"
 msgstr "Сообщение"
 
-#: monopoly/templates/game_view.html:58
+#: monopoly/templates/game_view.html:59
 msgid "Press Enter to send message..."
 msgstr "Нажмите Enter, чтобы отправить сообщение..."
 
-#: monopoly/templates/game_view.html:81
+#: monopoly/templates/game_view.html:82
 msgid "Mute/Unmute Music"
 msgstr "Отключить/Включить звук"
 
-#: monopoly/templates/game_view.html:84
+#: monopoly/templates/game_view.html:85
 msgid "Hide/Show the tutorial again"
 msgstr "Скрыть/Показать подсказку"
 
-#: monopoly/templates/game_view.html:88
+#: monopoly/templates/game_view.html:89
 msgid "Terminate the game"
 msgstr "Завершить игру"
 
-#: monopoly/templates/game_view.html:93
+#: monopoly/templates/game_view.html:94
 msgid "The balance of each player"
 msgstr "Баланс каждого игрока"
 
-#: monopoly/templates/game_view.html:94
+#: monopoly/templates/game_view.html:95
 msgid "You have 1500 million when the game starts."
 msgstr "На момент начала игры у вас есть 1500 миллионов."
 
-#: monopoly/templates/game_view.html:97
+#: monopoly/templates/game_view.html:98
 msgid "Chat with your friends"
 msgstr "Чат с друзьями"
 
-#: monopoly/templates/game_view.html:98
+#: monopoly/templates/game_view.html:99
 msgid "Messages will show up here."
 msgstr "Здесь будут появляться сообщения."
 
-#: monopoly/templates/game_view.html:102
+#: monopoly/templates/game_view.html:103
 msgid "You start here."
 msgstr "Вы начинаете здесь."
 
-#: monopoly/templates/game_view.html:107
+#: monopoly/templates/game_view.html:108
 msgid "Construction"
 msgstr "Строительство"
 
-#: monopoly/templates/game_view.html:108
+#: monopoly/templates/game_view.html:109
 msgid "When you stop onto a new land, you can"
 msgstr "Когда вы остановитесь на новой клетке, вы сможете"
 
-#: monopoly/templates/game_view.html:111
+#: monopoly/templates/game_view.html:112
 msgid "do nothing"
 msgstr "ничего не делать"
 
-#: monopoly/templates/game_view.html:114
+#: monopoly/templates/game_view.html:115
 msgid "buy the land"
 msgstr "купить клетку"
 
-#: monopoly/templates/game_view.html:117
+#: monopoly/templates/game_view.html:118
 msgid "(up to three, one at a time)"
 msgstr "(до трех, по одному)"
 
-#: monopoly/templates/game_view.html:117
+#: monopoly/templates/game_view.html:118
 msgid "build a house for $100"
 msgstr "Построить Дом"
 
-#: monopoly/templates/game_view.html:121
+#: monopoly/templates/game_view.html:122
 msgid "upgrade to a hotel for $150"
 msgstr "Построить Отель"
 
-#: monopoly/templates/game_view.html:125
+#: monopoly/templates/game_view.html:126
 msgid "You can also buy infrastructures like Entropy+, City Grill..."
 msgstr "Вы также можете купить другие инфраструктуры"
 
-#: monopoly/templates/game_view.html:128
+#: monopoly/templates/game_view.html:129
 msgid "Rent"
 msgstr "Аренда"
 
-#: monopoly/templates/game_view.html:129
+#: monopoly/templates/game_view.html:130
 msgid ""
 "When other players stop onto your land, you'll get rent from the player:"
 msgstr ""
 "Когда другие игроки останавливаются на вашей клетке, вы получаете от игрока "
 "ренту:"
 
-#: monopoly/templates/game_view.html:131
+#: monopoly/templates/game_view.html:132
 msgid "¼ (house) or ½ (hotel) of the land price,"
 msgstr "¼ (дом) или ½ (гостиница) стоимости земли,"
 
-#: monopoly/templates/game_view.html:132
+#: monopoly/templates/game_view.html:133
 msgid "and $10 for each house,"
 msgstr "и 10$ за каждый дом,"
 
-#: monopoly/templates/game_view.html:133
+#: monopoly/templates/game_view.html:134
 msgid "and $50 for the hotel."
 msgstr "и 50$ за отель."
 
-#: monopoly/templates/game_view.html:137
+#: monopoly/templates/game_view.html:138
 msgid "Game Process"
 msgstr "Игровой процесс"
 
-#: monopoly/templates/game_view.html:139
+#: monopoly/templates/game_view.html:140
 msgid "You'll be suspended for one round if you reach the AIV jail."
 msgstr "Если вы доберетесь до тюрьмы, вас отстранят на один раунд."
 
-#: monopoly/templates/game_view.html:140
+#: monopoly/templates/game_view.html:141
 msgid "The game ends after the first player runs out of cash."
 msgstr "Игра заканчивается после того, как у первого игрока закончатся деньги."
 
@@ -616,7 +616,7 @@ msgstr "Остановить один раунд"
 
 #: monopoly/ws_handlers/modal_title_enum.py:12
 msgid "Build a House"
-msgstr "построить один дом за 100$"
+msgstr "Построить Дом"
 
 #: monopoly/ws_handlers/modal_title_enum.py:13
 #, fuzzy
